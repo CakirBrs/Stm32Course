@@ -95,7 +95,7 @@ void gpio_init(GPIO_Handle_t * pGpio_handle);
 
 void gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no, uint8_t val);
 void gpio_writeto_output_port();
-void gpio_toggleto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no);
+void gpio_toggleto_output_pin();
 uint8_t gpio_read_input_pin();
 
 #endif /* GPIO_H_ */

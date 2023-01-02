@@ -26,7 +26,7 @@
 */
 
 void delay(){
-	for(int i=0;i<1000000;++i)
+	for(int i=0;i<100000;++i)
 		;
 }
 
@@ -68,8 +68,7 @@ int main(void)
 
     while(1)
     {
-    	gpio_toggleto_output_pin(GPIOD, GPIO_PIN_BLUE);
-    	delay();
+    	//gpio_toggleto_output_pin(GPIOD, GPIO_PIN_BLUE);
 
     }
 }

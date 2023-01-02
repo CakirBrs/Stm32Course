@@ -24,16 +24,9 @@
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 */
-
-void delay(){
-	for(int i=0;i<1000000;++i)
-		;
-}
-
-
-
 int main(void)
 {
+	//GPIOD->MODER=30;
 
 
 /**
@@ -64,12 +57,10 @@ int main(void)
 	gpio_writeto_output_pin(GPIOD , GPIO_PIN_BLUE, GPIO_PIN_SET);
 	gpio_writeto_output_pin(GPIOD , GPIO_PIN_ORANGE, GPIO_PIN_SET);
 
-	//gpio_writeto_output_pin(GPIOD , GPIO_PIN_ORANGE, GPIO_PIN_RESET);
+	gpio_writeto_output_pin(GPIOD , GPIO_PIN_ORANGE, GPIO_PIN_RESET);
 
     while(1)
     {
-    	gpio_toggleto_output_pin(GPIOD, GPIO_PIN_BLUE);
-    	delay();
 
     }
 }
