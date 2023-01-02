@@ -1,0 +1,16 @@
+18:51:49 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/gpio.c:67:7: warning: 'gpio_writeto_output_pin' defined but not used [-Wunused-function]
+   67 |  void gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox, uint8_t pin_no, uint8_t val){
+      |       ^~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./Src/main.o: in function `main':
+C:/Users/metab/STM32CubeIDE/workspace_1.10.1_CourseWS/ProfPro/Debug/../Src/main.c:48: undefined reference to `gpio_writeto_output_pin'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: ProfPro.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+18:51:49 Build Failed. 3 errors, 1 warnings. (took 807ms)
+
