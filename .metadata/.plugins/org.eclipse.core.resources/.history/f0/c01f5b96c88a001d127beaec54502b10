@@ -27,7 +27,7 @@
 int main(void)
 {
 	//GPIOD->MODER=30;
-
+	/**
 
 
 	GPIO_Handle_t Gpio_pd;
@@ -39,13 +39,13 @@ int main(void)
 	Gpio_pd.gPIO_pinConfig.pin_speed=GPIO_SPEED_MEDIUM;
 	gpio_init(&Gpio_pd);
 
+	**/
+
+	GPIO_Handle_t Gpio_pd_green={GPIOD,{GPIO_PIN_NO_12,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+	gpio_init(&Gpio_pd_green);
 
 
-	//GPIO_Handle_t Gpio_pd_green={GPIOD,{GPIO_PIN_NO_12,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
-	//gpio_init(&Gpio_pd_green);
-
-
-	//gpio_writeto_output_pin(GPIOD,GPIO_PIN_NO_12,GPIO_PIN_SET);
+	gpio_writeto_output_pin(GPIOD,GPIO_PIN_NO_12,GPIO_PIN_SET);
 
     while(1)
     {
