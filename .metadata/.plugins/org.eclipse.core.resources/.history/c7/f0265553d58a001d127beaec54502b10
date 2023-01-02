@@ -48,8 +48,8 @@ int main(void)
 
 	gpio_init(&Gpio_pd_blue);
 	gpio_init(&Gpio_pd_green);
-	gpio_init(&Gpio_pd_red);
-	gpio_init(&Gpio_pd_orange);
+	//gpio_init(Gpio_pd_blue);
+	//gpio_init(Gpio_pd_blue);
 
 	//gpio_writeto_output_pin(Gpio_pd.pGpioX , Gpio_pd.gPIO_pinConfig.pin_number, GPIO_PIN_SET);
 	gpio_writeto_output_pin(GPIOD , GPIO_PIN_NO_12, GPIO_PIN_SET);

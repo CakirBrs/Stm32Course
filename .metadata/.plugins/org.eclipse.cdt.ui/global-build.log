@@ -1857,3 +1857,219 @@ Finished building: default.size.stdout
  
 Finished building: ProfPro.list
  
+22:30:24 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1336	      8	   1568	   2912	    b60	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:30:49 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1336	      8	   1568	   2912	    b60	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:32:45 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1356	      8	   1568	   2932	    b74	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:33:02 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1364	      8	   1568	   2940	    b7c	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:33:04 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1364	      8	   1568	   2940	    b7c	ProfPro.elf
+Finished building: default.size.stdout
+ 
+22:34:24 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1364	      8	   1568	   2940	    b7c	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:34:26 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1364	      8	   1568	   2940	    b7c	ProfPro.elf
+Finished building: default.size.stdout
+ 
+22:38:20 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:45:16: warning: unused variable 'Gpio_pd_red' [-Wunused-variable]
+   45 |  GPIO_Handle_t Gpio_pd_red={GPIOD,{GPIO_PIN_NO_14,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+      |                ^~~~~~~~~~~
+../Src/main.c:44:16: warning: unused variable 'Gpio_pd_blue' [-Wunused-variable]
+   44 |  GPIO_Handle_t Gpio_pd_blue={GPIOD,{GPIO_PIN_NO_15,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+      |                ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+    852	      8	   1568	   2428	    97c	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:38:41 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+    852	      8	   1568	   2428	    97c	ProfPro.elf
+Finished building: default.size.stdout
+ 
+22:38:43 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+    852	      8	   1568	   2428	    97c	ProfPro.elf
+Finished building: default.size.stdout
+ 
+22:39:46 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:49:12: error: incompatible type for argument 1 of 'gpio_init'
+   49 |  gpio_init(Gpio_pd_blue);
+      |            ^~~~~~~~~~~~
+      |            |
+      |            GPIO_Handle_t
+In file included from ../Src/main.c:21:
+../Inc/gpio.h:94:32: note: expected 'GPIO_Handle_t *' but argument is of type 'GPIO_Handle_t'
+   94 | void gpio_init(GPIO_Handle_t * pGpio_handle);
+      |                ~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+../Src/main.c:50:12: error: incompatible type for argument 1 of 'gpio_init'
+   50 |  gpio_init(Gpio_pd_green);
+      |            ^~~~~~~~~~~~~
+      |            |
+      |            GPIO_Handle_t
+In file included from ../Src/main.c:21:
+../Inc/gpio.h:94:32: note: expected 'GPIO_Handle_t *' but argument is of type 'GPIO_Handle_t'
+   94 | void gpio_init(GPIO_Handle_t * pGpio_handle);
+      |                ~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+../Src/main.c:46:16: warning: unused variable 'Gpio_pd_orange' [-Wunused-variable]
+   46 |  GPIO_Handle_t Gpio_pd_orange={GPIOD,{GPIO_PIN_NO_13,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+      |                ^~~~~~~~~~~~~~
+../Src/main.c:45:16: warning: unused variable 'Gpio_pd_red' [-Wunused-variable]
+   45 |  GPIO_Handle_t Gpio_pd_red={GPIOD,{GPIO_PIN_NO_14,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+      |                ^~~~~~~~~~~
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:39:59 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:46:16: warning: unused variable 'Gpio_pd_orange' [-Wunused-variable]
+   46 |  GPIO_Handle_t Gpio_pd_orange={GPIOD,{GPIO_PIN_NO_13,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+      |                ^~~~~~~~~~~~~~
+../Src/main.c:45:16: warning: unused variable 'Gpio_pd_red' [-Wunused-variable]
+   45 |  GPIO_Handle_t Gpio_pd_red={GPIOD,{GPIO_PIN_NO_14,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+      |                ^~~~~~~~~~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1468	      8	   1568	   3044	    be4	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:40:03 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1468	      8	   1568	   3044	    be4	ProfPro.elf
+Finished building: default.size.stdout
+ 
+22:40:35 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:46:16: warning: unused variable 'Gpio_pd_orange' [-Wunused-variable]
+   46 |  GPIO_Handle_t Gpio_pd_orange={GPIOD,{GPIO_PIN_NO_13,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+      |                ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1476	      8	   1568	   3052	    bec	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:40:57 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1488	      8	   1568	   3064	    bf8	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:41:00 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1488	      8	   1568	   3064	    bf8	ProfPro.elf
+Finished building: default.size.stdout
+ 
