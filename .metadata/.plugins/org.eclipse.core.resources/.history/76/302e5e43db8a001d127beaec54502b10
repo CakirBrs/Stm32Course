@@ -94,7 +94,6 @@ enum{
 #define GPIO_PORT_PIN_RED			(1U<<14)
 #define GPIO_PORT_PIN_ORANGE		(1U<<13)
 #define GPIO_PORT_PIN_GREEN			(1U<<12)
-#define GPIO_PORT_PIN_ALL_COLOR		GPIO_PORT_PIN_BLUE|GPIO_PORT_PIN_RED|GPIO_PORT_PIN_ORANGE|GPIO_PORT_PIN_GREEN
 
 void gpio_init(GPIO_Handle_t * pGpio_handle);
 

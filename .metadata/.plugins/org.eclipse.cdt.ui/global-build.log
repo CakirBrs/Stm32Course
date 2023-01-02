@@ -2281,3 +2281,162 @@ Finished building: default.size.stdout
  
 Finished building: ProfPro.list
  
+23:20:49 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:75:38: error: expected expression before ')' token
+   75 |      gpio_writeto_output_port(GPIOD, )
+      |                                      ^
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:20:58 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:75:57: error: expected ';' before '}' token
+   75 |      gpio_writeto_output_port(GPIOD, GPIO_PORT_PIN_BLUE)
+      |                                                         ^
+      |                                                         ;
+   76 | 
+   77 |     }
+      |     ~                                                    
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:21:04 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1528	      8	   1568	   3104	    c20	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+23:21:27 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1412	      8	   1568	   2988	    bac	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+23:21:30 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1412	      8	   1568	   2988	    bac	ProfPro.elf
+Finished building: default.size.stdout
+ 
+23:21:53 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1412	      8	   1568	   2988	    bac	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+23:21:55 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1412	      8	   1568	   2988	    bac	ProfPro.elf
+Finished building: default.size.stdout
+ 
+23:23:05 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+../Inc/gpio.h:93:30: warning: passing argument 1 of 'gpio_writeto_output_port' makes pointer from integer without a cast [-Wint-conversion]
+   93 | #define GPIO_PORT_PIN_BLUE   (1U<<15)
+      |                              ^
+      |                              |
+      |                              unsigned int
+../Inc/gpio.h:97:34: note: in expansion of macro 'GPIO_PORT_PIN_BLUE'
+   97 | #define GPIO_PORT_PIN_ALL_COLOR  GPIO_PORT_PIN_BLUE|GPIO_PORT_PIN_RED|GPIO_PORT_PIN_ORANGE|GPIO_PORT_PIN_GREEN
+      |                                  ^~~~~~~~~~~~~~~~~~
+../Src/main.c:75:31: note: in expansion of macro 'GPIO_PORT_PIN_ALL_COLOR'
+   75 |      gpio_writeto_output_port(GPIO_PORT_PIN_ALL_COLOR);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~
+../Inc/gpio.h:102:46: note: expected 'GPIO_RegDef_t *' but argument is of type 'unsigned int'
+  102 | void gpio_writeto_output_port(GPIO_RegDef_t *pGpiox ,uint16_t val);
+      |                               ~~~~~~~~~~~~~~~^~~~~~
+../Src/main.c:75:6: error: too few arguments to function 'gpio_writeto_output_port'
+   75 |      gpio_writeto_output_port(GPIO_PORT_PIN_ALL_COLOR);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Src/main.c:21:
+../Inc/gpio.h:102:6: note: declared here
+  102 | void gpio_writeto_output_port(GPIO_RegDef_t *pGpiox ,uint16_t val);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:23:07 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+../Inc/gpio.h:93:30: warning: passing argument 1 of 'gpio_writeto_output_port' makes pointer from integer without a cast [-Wint-conversion]
+   93 | #define GPIO_PORT_PIN_BLUE   (1U<<15)
+      |                              ^
+      |                              |
+      |                              unsigned int
+../Inc/gpio.h:97:34: note: in expansion of macro 'GPIO_PORT_PIN_BLUE'
+   97 | #define GPIO_PORT_PIN_ALL_COLOR  GPIO_PORT_PIN_BLUE|GPIO_PORT_PIN_RED|GPIO_PORT_PIN_ORANGE|GPIO_PORT_PIN_GREEN
+      |                                  ^~~~~~~~~~~~~~~~~~
+../Src/main.c:75:31: note: in expansion of macro 'GPIO_PORT_PIN_ALL_COLOR'
+   75 |      gpio_writeto_output_port(GPIO_PORT_PIN_ALL_COLOR);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~
+../Inc/gpio.h:102:46: note: expected 'GPIO_RegDef_t *' but argument is of type 'unsigned int'
+  102 | void gpio_writeto_output_port(GPIO_RegDef_t *pGpiox ,uint16_t val);
+      |                               ~~~~~~~~~~~~~~~^~~~~~
+../Src/main.c:75:6: error: too few arguments to function 'gpio_writeto_output_port'
+   75 |      gpio_writeto_output_port(GPIO_PORT_PIN_ALL_COLOR);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Src/main.c:21:
+../Inc/gpio.h:102:6: note: declared here
+  102 | void gpio_writeto_output_port(GPIO_RegDef_t *pGpiox ,uint16_t val);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:23:19 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1412	      8	   1568	   2988	    bac	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+23:23:23 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1412	      8	   1568	   2988	    bac	ProfPro.elf
+Finished building: default.size.stdout
+ 

@@ -58,21 +58,18 @@ int main(void)
 	gpio_init(&Gpio_pd_red);
 	gpio_init(&Gpio_pd_orange);
 
-
-	//gpio_writeto_output_pin(GPIOD , GPIO_PIN_GREEN, GPIO_PIN_SET); //GPIO_PIN_NO_15de yazılabilir GPIO_PIN_GREEN yerine
-	//gpio_writeto_output_pin(GPIOD , GPIO_PIN_RED, GPIO_PIN_SET);
-	//gpio_writeto_output_pin(GPIOD , GPIO_PIN_BLUE, GPIO_PIN_SET);
-	//gpio_writeto_output_pin(GPIOD , GPIO_PIN_ORANGE, GPIO_PIN_SET);
+	//gpio_writeto_output_pin(Gpio_pd.pGpioX , Gpio_pd.gPIO_pinConfig.pin_number, GPIO_PIN_SET);
+	gpio_writeto_output_pin(GPIOD , GPIO_PIN_GREEN, GPIO_PIN_SET); //GPIO_PIN_NO_15de yazılabilir GPIO_PIN_GREEN yerine
+	gpio_writeto_output_pin(GPIOD , GPIO_PIN_RED, GPIO_PIN_SET);
+	gpio_writeto_output_pin(GPIOD , GPIO_PIN_BLUE, GPIO_PIN_SET);
+	gpio_writeto_output_pin(GPIOD , GPIO_PIN_ORANGE, GPIO_PIN_SET);
 
 	//gpio_writeto_output_pin(GPIOD , GPIO_PIN_ORANGE, GPIO_PIN_RESET);
 
     while(1)
     {
-    	/**
     	gpio_toggleto_output_pin(GPIOD, GPIO_PIN_BLUE);
     	delay();
-		**/
-    	gpio_writeto_output_port(GPIOD, GPIO_PORT_PIN_ALL_COLOR);
 
     }
 }
