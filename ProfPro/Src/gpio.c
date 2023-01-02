@@ -63,18 +63,24 @@ void gpio_init(GPIO_Handle_t * pGpio_handle){
 	if(pGpio_handle->gPIO_pinConfig.pin_mode==GPIO_MODE_ALTERNATE)
 		;
 
+	//bi portun pinine 1 mi 0 mı yazacağız....
 
-	void gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox, uint8_t pin_no, uint8_t val){
-
-	}
 
 
 
 }
 
-/*void gpio_writeto_output_pin(&Gpio_pd_14.pGpioX,Gpio_pd_14.gPIO_pinconfig.pin_number, ){
 
-}*/
+void  gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no, uint8_t val){
+
+	if(val==GPIO_PIN_SET)
+		pGpiox->ODR |= (1u<<pin_no);
+	else
+		pGpiox->ODR &=~ (1u<<pin_no);
+
+
+}
+
 
 
 

@@ -1431,3 +1431,429 @@ arm-none-eabi-size   ProfPro.elf
    1256	      8	   1568	   2832	    b10	ProfPro.elf
 Finished building: default.size.stdout
  
+22:01:40 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:67:7: error: two or more data types in declaration specifiers
+   67 |  void void gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no, uint8_t val);{
+      |       ^~~~
+make: *** [Src/subdir.mk:28: Src/gpio.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:01:56 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1252	      8	   1568	   2828	    b0c	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:03:41 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:50:90: error: expected ';' before 'while'
+   50 |  gpio_writeto_output_pin(Gpio_pd.pGpioX, Gpio_pd.gPIO_pinConfig.pin_number, GPIO_PIN_SET)
+      |                                                                                          ^
+      |                                                                                          ;
+......
+   54 |     while(1)
+      |     ~~~~~                                                                                 
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:03:48 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./Src/main.o: in function `main':
+C:/Users/metab/STM32CubeIDE/workspace_1.10.1_CourseWS/ProfPro/Debug/../Src/main.c:50: undefined reference to `gpio_writeto_output_pin'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: ProfPro.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:04:02 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:50:26: warning: passing argument 1 of 'gpio_writeto_output_pin' from incompatible pointer type [-Wincompatible-pointer-types]
+   50 |  gpio_writeto_output_pin(&Gpio_pd.pGpioX, Gpio_pd.gPIO_pinConfig.pin_number, GPIO_PIN_SET);
+      |                          ^~~~~~~~~~~~~~~
+      |                          |
+      |                          GPIO_RegDef_t **
+In file included from ../Src/main.c:21:
+../Inc/gpio.h:96:45: note: expected 'GPIO_RegDef_t *' but argument is of type 'GPIO_RegDef_t **'
+   96 | void gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no, uint8_t val);
+      |                              ~~~~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./Src/main.o: in function `main':
+C:/Users/metab/STM32CubeIDE/workspace_1.10.1_CourseWS/ProfPro/Debug/../Src/main.c:50: undefined reference to `gpio_writeto_output_pin'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: ProfPro.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:05:58 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./Src/main.o: in function `main':
+C:/Users/metab/STM32CubeIDE/workspace_1.10.1_CourseWS/ProfPro/Debug/../Src/main.c:50: undefined reference to `gpio_writeto_output_pin'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: ProfPro.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:06:22 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./Src/main.o: in function `main':
+C:/Users/metab/STM32CubeIDE/workspace_1.10.1_CourseWS/ProfPro/Debug/../Src/main.c:50: undefined reference to `gpio_writeto_output_pin'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: ProfPro.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:07:17 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./Src/main.o: in function `main':
+C:/Users/metab/STM32CubeIDE/workspace_1.10.1_CourseWS/ProfPro/Debug/../Src/main.c:50: undefined reference to `gpio_writeto_output_pin'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: ProfPro.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:08:31 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+../Src/gpio.c:67:7: warning: 'gpio_writeto_output_pin' defined but not used [-Wunused-function]
+   67 |  void gpio_writeto_output_pin(uint8_t val){
+      |       ^~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./Src/main.o: in function `main':
+C:/Users/metab/STM32CubeIDE/workspace_1.10.1_CourseWS/ProfPro/Debug/../Src/main.c:50: undefined reference to `gpio_writeto_output_pin'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: ProfPro.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:09:33 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:50:26: warning: passing argument 1 of 'gpio_writeto_output_pin' makes pointer from integer without a cast [-Wint-conversion]
+   50 |  gpio_writeto_output_pin(GPIO_PIN_SET);
+      |                          ^~~~~~~~~~~~
+      |                          |
+      |                          int
+In file included from ../Src/main.c:21:
+../Inc/gpio.h:96:45: note: expected 'GPIO_RegDef_t *' but argument is of type 'int'
+   96 | void gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no, uint8_t val);
+      |                              ~~~~~~~~~~~~~~~^~~~~~
+../Src/main.c:50:2: error: too few arguments to function 'gpio_writeto_output_pin'
+   50 |  gpio_writeto_output_pin(GPIO_PIN_SET);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Src/main.c:21:
+../Inc/gpio.h:96:6: note: declared here
+   96 | void gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no, uint8_t val);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Src/gpio.c:67:8: warning: 'gpio_writeto_output_pin' defined but not used [-Wunused-function]
+   67 |  void  gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no, uint8_t val){
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:09:55 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:50:26: warning: passing argument 1 of 'gpio_writeto_output_pin' from incompatible pointer type [-Wincompatible-pointer-types]
+   50 |  gpio_writeto_output_pin(&Gpio_pd.pGpioX, Gpio_pd.gPIO_pinConfig.pin_number, GPIO_PIN_SET);
+      |                          ^~~~~~~~~~~~~~~
+      |                          |
+      |                          GPIO_RegDef_t **
+In file included from ../Src/main.c:21:
+../Inc/gpio.h:96:45: note: expected 'GPIO_RegDef_t *' but argument is of type 'GPIO_RegDef_t **'
+   96 | void gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no, uint8_t val);
+      |                              ~~~~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./Src/main.o: in function `main':
+C:/Users/metab/STM32CubeIDE/workspace_1.10.1_CourseWS/ProfPro/Debug/../Src/main.c:50: undefined reference to `gpio_writeto_output_pin'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: ProfPro.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:10:17 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+../Src/gpio.c:67:8: warning: 'gpio_writeto_output_pin' defined but not used [-Wunused-function]
+   67 |  void  gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no, uint8_t val){
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./Src/main.o: in function `main':
+C:/Users/metab/STM32CubeIDE/workspace_1.10.1_CourseWS/ProfPro/Debug/../Src/main.c:50: undefined reference to `gpio_writeto_output_pin'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: ProfPro.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:10:55 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/gpio.c:67:8: warning: 'gpio_writeto_output_pin' defined but not used [-Wunused-function]
+   67 |  void  gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox){
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:50:26: warning: passing argument 1 of 'gpio_writeto_output_pin' from incompatible pointer type [-Wincompatible-pointer-types]
+   50 |  gpio_writeto_output_pin(&Gpio_pd.pGpioX);
+      |                          ^~~~~~~~~~~~~~~
+      |                          |
+      |                          GPIO_RegDef_t **
+In file included from ../Src/main.c:21:
+../Inc/gpio.h:96:45: note: expected 'GPIO_RegDef_t *' but argument is of type 'GPIO_RegDef_t **'
+   96 | void gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox);
+      |                              ~~~~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./Src/main.o: in function `main':
+C:/Users/metab/STM32CubeIDE/workspace_1.10.1_CourseWS/ProfPro/Debug/../Src/main.c:50: undefined reference to `gpio_writeto_output_pin'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: ProfPro.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:11:17 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/gpio.c:67:8: warning: 'gpio_writeto_output_pin' defined but not used [-Wunused-function]
+   67 |  void  gpio_writeto_output_pin(){
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./Src/main.o: in function `main':
+C:/Users/metab/STM32CubeIDE/workspace_1.10.1_CourseWS/ProfPro/Debug/../Src/main.c:50: undefined reference to `gpio_writeto_output_pin'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: ProfPro.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:11:52 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+../Src/gpio.c: In function 'gpio_writeto_output_pin':
+../Src/gpio.c:68:11: warning: unused variable 'aaaa' [-Wunused-variable]
+   68 |   uint8_t aaaa=0;
+      |           ^~~~
+At top level:
+../Src/gpio.c:67:8: warning: 'gpio_writeto_output_pin' defined but not used [-Wunused-function]
+   67 |  void  gpio_writeto_output_pin(){
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./Src/main.o: in function `main':
+C:/Users/metab/STM32CubeIDE/workspace_1.10.1_CourseWS/ProfPro/Debug/../Src/main.c:50: undefined reference to `gpio_writeto_output_pin'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: ProfPro.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:13:09 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:50:26: warning: passing argument 1 of 'gpio_writeto_output_pin' from incompatible pointer type [-Wincompatible-pointer-types]
+   50 |  gpio_writeto_output_pin(&Gpio_pd.pGpioX, Gpio_pd.gPIO_pinConfig.pin_number, GPIO_PIN_SET);
+      |                          ^~~~~~~~~~~~~~~
+      |                          |
+      |                          GPIO_RegDef_t **
+In file included from ../Src/main.c:21:
+../Inc/gpio.h:96:45: note: expected 'GPIO_RegDef_t *' but argument is of type 'GPIO_RegDef_t **'
+   96 | void gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no, uint8_t val);
+      |                              ~~~~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1292	      8	   1568	   2868	    b34	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:21:05 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:50:26: warning: passing argument 1 of 'gpio_writeto_output_pin' from incompatible pointer type [-Wincompatible-pointer-types]
+   50 |  gpio_writeto_output_pin(&Gpio_pd.pGpioX, Gpio_pd.gPIO_pinConfig.pin_number, GPIO_PIN_SET);
+      |                          ^~~~~~~~~~~~~~~
+      |                          |
+      |                          GPIO_RegDef_t **
+In file included from ../Src/main.c:21:
+../Inc/gpio.h:96:45: note: expected 'GPIO_RegDef_t *' but argument is of type 'GPIO_RegDef_t **'
+   96 | void gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no, uint8_t val);
+      |                              ~~~~~~~~~~~~~~~^~~~~~
+../Src/gpio.c: In function 'gpio_writeto_output_pin':
+../Src/gpio.c:77:23: error: 'pin' undeclared (first use in this function)
+   77 |   pGpiox->ODR |= (1u>>pin-no);
+      |                       ^~~
+../Src/gpio.c:77:23: note: each undeclared identifier is reported only once for each function it appears in
+../Src/gpio.c:77:27: error: 'no' undeclared (first use in this function)
+   77 |   pGpiox->ODR |= (1u>>pin-no);
+      |                           ^~
+make: *** [Src/subdir.mk:28: Src/gpio.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:21:15 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1336	      8	   1568	   2912	    b60	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:22:10 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:52:40: error: 'GPIO_Handle_t' has no member named 'GPIO_PIN_NO_14'
+   52 |  gpio_writeto_output_pin(GPIOD, Gpio_pd.GPIO_PIN_NO_14, GPIO_PIN_SET);
+      |                                        ^
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:22:13 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:52:26: error: lvalue required as unary '&' operand
+   52 |  gpio_writeto_output_pin(&GPIOD, Gpio_pd.GPIO_PIN_NO_14, GPIO_PIN_SET);
+      |                          ^
+../Src/main.c:52:41: error: 'GPIO_Handle_t' has no member named 'GPIO_PIN_NO_14'
+   52 |  gpio_writeto_output_pin(&GPIOD, Gpio_pd.GPIO_PIN_NO_14, GPIO_PIN_SET);
+      |                                         ^
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:23:01 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:52:41: error: 'GPIO_Handle_t' has no member named 'GPIO_PIN_NO_14'
+   52 |  gpio_writeto_output_pin(GPIOD , Gpio_pd.GPIO_PIN_NO_14, GPIO_PIN_SET);
+      |                                         ^
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:23:10 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1336	      8	   1568	   2912	    b60	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:23:44 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1336	      8	   1568	   2912	    b60	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:24:06 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1336	      8	   1568	   2912	    b60	ProfPro.elf
+Finished building: default.size.stdout
+ 
+22:24:43 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:50:26: warning: passing argument 1 of 'gpio_writeto_output_pin' from incompatible pointer type [-Wincompatible-pointer-types]
+   50 |  gpio_writeto_output_pin(&Gpio_pd.pGpioX, Gpio_pd.gPIO_pinConfig.pin_number, GPIO_PIN_SET);
+      |                          ^~~~~~~~~~~~~~~
+      |                          |
+      |                          GPIO_RegDef_t **
+In file included from ../Src/main.c:21:
+../Inc/gpio.h:96:45: note: expected 'GPIO_RegDef_t *' but argument is of type 'GPIO_RegDef_t **'
+   96 | void gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no, uint8_t val);
+      |                              ~~~~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1336	      8	   1568	   2912	    b60	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:24:46 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1336	      8	   1568	   2912	    b60	ProfPro.elf
+Finished building: default.size.stdout
+ 
+22:25:30 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1336	      8	   1568	   2912	    b60	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:26:33 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1336	      8	   1568	   2912	    b60	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:26:37 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1336	      8	   1568	   2912	    b60	ProfPro.elf
+Finished building: default.size.stdout
+ 
+22:27:57 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1336	      8	   1568	   2912	    b60	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
