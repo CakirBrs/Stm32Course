@@ -59,7 +59,6 @@ int main(void)
 	gpio_init(&Gpio_pd_orange);
 
 
-	//A portunun 0. pini push button
 	GPIO_Handle_t Gpio_pd_button={GPIOA,{GPIO_PIN_NO_0,GPIO_MODE_IN,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
 	gpio_init(&Gpio_pd_button);
 
@@ -86,7 +85,7 @@ int main(void)
     		gpio_writeto_output_pin(GPIOD, GPIO_PIN_GREEN, GPIO_PIN_RESET);
     	}
 
-
+    	//A portunun 0. pini push button
 
     }
 }

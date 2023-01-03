@@ -59,11 +59,6 @@ int main(void)
 	gpio_init(&Gpio_pd_orange);
 
 
-	//A portunun 0. pini push button
-	GPIO_Handle_t Gpio_pd_button={GPIOA,{GPIO_PIN_NO_0,GPIO_MODE_IN,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
-	gpio_init(&Gpio_pd_button);
-
-
 	//gpio_writeto_output_pin(GPIOD , GPIO_PIN_GREEN, GPIO_PIN_SET); //GPIO_PIN_NO_15de yazılabilir GPIO_PIN_GREEN yerine
 	//gpio_writeto_output_pin(GPIOD , GPIO_PIN_RED, GPIO_PIN_SET);
 	//gpio_writeto_output_pin(GPIOD , GPIO_PIN_BLUE, GPIO_PIN_SET);
@@ -86,7 +81,7 @@ int main(void)
     		gpio_writeto_output_pin(GPIOD, GPIO_PIN_GREEN, GPIO_PIN_RESET);
     	}
 
-
+    	//A portunun 0. pini push button
 
     }
 }
