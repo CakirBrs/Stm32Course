@@ -92,8 +92,4 @@ void gpio_toggleto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no){
 
 }
 
-uint32_t gpio_read_input_pin(GPIO_RegDef_t *pGpiox, uint32_t pin_no){
-	uint32_t res;
-	res = pGpiox->IDR &(1u<<pin_no);
-	return res;
-}
+

@@ -74,7 +74,7 @@ int main(void)
 		**/
 
     	gpio_toggleto_output_pin(GPIOD, GPIO_PIN_BLUE);
-    	uint32_t res=gpio_read_input_pin(GPIOD, GPIO_PIN_BLUE);
+    	uint8_t res=gpio_read_input_pin(GPIOD, GPIO_PORT_PIN_BLUE);
 
     }
 }

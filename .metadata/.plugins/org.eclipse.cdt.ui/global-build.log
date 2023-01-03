@@ -2440,3 +2440,202 @@ arm-none-eabi-size   ProfPro.elf
    1412	      8	   1568	   2988	    bac	ProfPro.elf
 Finished building: default.size.stdout
  
+23:26:52 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/gpio.c: In function 'gpio_read_input_pin':
+../Src/gpio.c:97:1: warning: control reaches end of non-void function [-Wreturn-type]
+   97 | }
+      | ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1412	      8	   1568	   2988	    bac	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+21:44:49 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+../Src/gpio.c: In function 'gpio_read_input_pin':
+../Src/gpio.c:96:10: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+   96 |  uint8_t res;
+      |          ^~~
+../Src/gpio.c:99:1: warning: control reaches end of non-void function [-Wreturn-type]
+   99 | }
+      | ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1412	      8	   1568	   2988	    bac	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+21:45:00 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1412	      8	   1568	   2988	    bac	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+21:47:01 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+../Inc/gpio.h:93:30: warning: conversion from 'unsigned int' to 'uint8_t' {aka 'unsigned char'} changes value from '32768' to '0' [-Woverflow]
+   93 | #define GPIO_PORT_PIN_BLUE   (1U<<15)
+      |                              ^~~~~~~~
+../Src/main.c:76:38: note: in expansion of macro 'GPIO_PORT_PIN_BLUE'
+   76 |      gpio_toggleto_output_pin(GPIOD, GPIO_PORT_PIN_BLUE);
+      |                                      ^~~~~~~~~~~~~~~~~~
+../Inc/gpio.h:93:30: warning: conversion from 'unsigned int' to 'uint8_t' {aka 'unsigned char'} changes value from '32768' to '0' [-Woverflow]
+   93 | #define GPIO_PORT_PIN_BLUE   (1U<<15)
+      |                              ^~~~~~~~
+../Src/main.c:77:45: note: in expansion of macro 'GPIO_PORT_PIN_BLUE'
+   77 |      uint8_t res=gpio_read_input_pin(GPIOD, GPIO_PORT_PIN_BLUE);
+      |                                             ^~~~~~~~~~~~~~~~~~
+../Src/main.c:77:14: warning: unused variable 'res' [-Wunused-variable]
+   77 |      uint8_t res=gpio_read_input_pin(GPIOD, GPIO_PORT_PIN_BLUE);
+      |              ^~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1492	      8	   1568	   3068	    bfc	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+21:56:26 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+../Inc/gpio.h:93:30: warning: conversion from 'unsigned int' to 'uint8_t' {aka 'unsigned char'} changes value from '32768' to '0' [-Woverflow]
+   93 | #define GPIO_PORT_PIN_BLUE   (1U<<15)
+      |                              ^~~~~~~~
+../Src/main.c:77:45: note: in expansion of macro 'GPIO_PORT_PIN_BLUE'
+   77 |      uint8_t res=gpio_read_input_pin(GPIOD, GPIO_PORT_PIN_BLUE);
+      |                                             ^~~~~~~~~~~~~~~~~~
+../Src/main.c:77:14: warning: unused variable 'res' [-Wunused-variable]
+   77 |      uint8_t res=gpio_read_input_pin(GPIOD, GPIO_PORT_PIN_BLUE);
+      |              ^~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1492	      8	   1568	   3068	    bfc	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+21:56:40 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1492	      8	   1568	   3068	    bfc	ProfPro.elf
+Finished building: default.size.stdout
+ 
+21:57:59 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:77:14: warning: unused variable 'res' [-Wunused-variable]
+   77 |      uint8_t res=gpio_read_input_pin(GPIOD, GPIO_PIN_BLUE);
+      |              ^~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1492	      8	   1568	   3068	    bfc	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+21:58:16 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1492	      8	   1568	   3068	    bfc	ProfPro.elf
+Finished building: default.size.stdout
+ 
+22:01:04 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/gpio.c:95:10: error: conflicting types for 'gpio_read_input_pin'
+   95 | uint32_t gpio_read_input_pin(GPIO_RegDef_t *pGpiox, uint32_t pin_no){
+      |          ^~~~~~~~~~~~~~~~~~~
+In file included from ../Src/gpio.c:7:
+../Inc/gpio.h:104:9: note: previous declaration of 'gpio_read_input_pin' was here
+  104 | uint8_t gpio_read_input_pin(GPIO_RegDef_t *pGpiox, uint32_t pin_no);
+      |         ^~~~~~~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:77:15: warning: unused variable 'res' [-Wunused-variable]
+   77 |      uint32_t res=gpio_read_input_pin(GPIOD, GPIO_PIN_BLUE);
+      |               ^~~
+make: *** [Src/subdir.mk:28: Src/gpio.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:01:18 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+../Src/gpio.c:95:10: error: conflicting types for 'gpio_read_input_pin'
+   95 | uint32_t gpio_read_input_pin(GPIO_RegDef_t *pGpiox, uint32_t pin_no){
+      |          ^~~~~~~~~~~~~~~~~~~
+In file included from ../Src/gpio.c:7:
+../Inc/gpio.h:104:9: note: previous declaration of 'gpio_read_input_pin' was here
+  104 | uint8_t gpio_read_input_pin(GPIO_RegDef_t *pGpiox, uint32_t pin_no);
+      |         ^~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:28: Src/gpio.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:01:36 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:77:15: warning: unused variable 'res' [-Wunused-variable]
+   77 |      uint32_t res=gpio_read_input_pin(GPIOD, GPIO_PIN_BLUE);
+      |               ^~~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1480	      8	   1568	   3056	    bf0	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+22:01:41 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1480	      8	   1568	   3056	    bf0	ProfPro.elf
+Finished building: default.size.stdout
+ 
