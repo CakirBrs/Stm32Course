@@ -75,11 +75,6 @@ int main(void)
 
     	gpio_toggleto_output_pin(GPIOD, GPIO_PIN_BLUE);
     	uint32_t res=gpio_read_input_pin(GPIOD, GPIO_PIN_BLUE);
-    	if(res==GPIO_PIN_SET){
-    		gpio_writeto_output_pin(GPIOD, GPIO_PIN_GREEN, GPIO_PIN_SET);
-    	}else{
-    		gpio_writeto_output_pin(GPIOD, GPIO_PIN_GREEN, GPIO_PIN_RESET);
-    	}
 
     }
 }
