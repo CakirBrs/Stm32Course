@@ -46,21 +46,12 @@ void gpio_init(GPIO_Handle_t * pGpio_handle){
 		pGpio_handle->pGpioX->MODER |=temp;
 	}else{
 		//interrupt mode
-		if(pGpio_handle->gPIO_pinConfig.pin_mode==GPIO_MODE_FE_IT) //Only falling
-		{
-			EXTI->FTSR |= (1U<<pGpio_handle->gPIO_pinConfig.pin_number); //falling set
-			EXTI->RTSR &= ~(1U<<pGpio_handle->gPIO_pinConfig.pin_number);//rising reset
-		}
-		else if(pGpio_handle->gPIO_pinConfig.pin_mode==GPIO_MODE_RE_IT) // only rising
-		{
-			EXTI->RTSR |= (1U<<pGpio_handle->gPIO_pinConfig.pin_number);//rising set
-			EXTI->FTSR &= ~(1U<<pGpio_handle->gPIO_pinConfig.pin_number);//falling reset
-		}
-		else if(pGpio_handle->gPIO_pinConfig.pin_mode==GPIO_MODE_FRE_IT) // falling + rising
-		{
-			EXTI->RTSR |= (1U <<pGpio_handle->gPIO_pinConfig.pin_number); //rising set
-			EXTI->FTSR |= (1U <<pGpio_handle->gPIO_pinConfig.pin_number); //falling set
-		}
+		if(pGpio_handle->gPIO_pinConfig.pin_mode==GPIO_MODE_FE_IT)
+			EXTI->
+		else if(pGpio_handle->gPIO_pinConfig.pin_mode==GPIO_MODE_RE_IT)
+			;
+		else if(pGpio_handle->gPIO_pinConfig.pin_mode==GPIO_MODE_FRE_IT)
+			;
 	}
 
 	//speed ayarla

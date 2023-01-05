@@ -30,8 +30,8 @@ void delay(){
 		;
 }
 
-#define BTN_PRESSED	1
-#define BTN_RELEASED 0
+#define BTN_PRESS	1
+#define BTN_RELEASE 0
 
 int main(void)
 {
@@ -81,7 +81,7 @@ int main(void)
 
     	gpio_toggleto_output_pin(GPIOD, GPIO_PIN_BLUE);
     	uint32_t res=gpio_read_input_pin(GPIOA, GPIO_PIN_NO_0);
-    	if(res==BTN_PRESSED){
+    	if(res==BTN_PRESS){
     		gpio_toggleto_output_pin(GPIOD, GPIO_PIN_GREEN);
     		delay();
     	}

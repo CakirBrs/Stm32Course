@@ -150,20 +150,6 @@ typedef struct{
 	volatile uint32_t PR;
 }EXTI_RegDef_t;
 
-typedef struct{
-	volatile uint32_t MEMRF;
-	volatile uint32_t PMC;
-	volatile uint32_t EXTICR[4];
-	//0x14 + 0x4 = 0x18 reserve
-	//0x18 + 0x4 = 0x1c reserve
-	//0x1c + 0x4 = 0x20 cmpcr olacak
-	uint32_t RESERVED0[2];
-	volatile uint32_t CMPCR;
-
-
-
-}SYSCFG_RegDef_t;
-
 #define 	GPIOA					((GPIO_RegDef_t*)GPIOA_BASEADDR)
 #define 	GPIOB					((GPIO_RegDef_t*)GPIOB_BASEADDR)
 #define 	GPIOC					((GPIO_RegDef_t*)GPIOC_BASEADDR)
@@ -176,8 +162,7 @@ typedef struct{
 
 
 #define 	RCC  					((RCC_RegDef_t *) RCC_BASEADDR)
-#define		EXTI					((EXTI_RegDef_t *) EXTI_BASEADDR)
-#define 	SYSCFG					((SYSCFG_RegDef_t *) SYSCFG_BASEADDR)
+#define		EXTI					((GPIO_RegDef_t*) EXTI_BASEADDR)
 
 #define GPIOA_CLOCK_ENABLE()		(RCC->AHB1ENR |=(1<<0))
 #define GPIOB_CLOCK_ENABLE()		(RCC->AHB1ENR |=(1<<1))

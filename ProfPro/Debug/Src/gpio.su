@@ -1,6 +1,6 @@
 ../Src/gpio.c:10:14:gpio_perip_en	16	static
 ../Src/gpio.c:32:6:gpio_init	24	static
-../Src/gpio.c:74:7:gpio_writeto_output_pin	16	static
-../Src/gpio.c:84:6:gpio_writeto_output_port	16	static
-../Src/gpio.c:90:6:gpio_toggleto_output_pin	16	static
-../Src/gpio.c:95:10:gpio_read_input_pin	24	static
+../Src/gpio.c:93:7:gpio_writeto_output_pin	16	static
+../Src/gpio.c:103:6:gpio_writeto_output_port	16	static
+../Src/gpio.c:109:6:gpio_toggleto_output_pin	16	static
+../Src/gpio.c:114:10:gpio_read_input_pin	24	static
