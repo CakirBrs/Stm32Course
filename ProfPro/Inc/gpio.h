@@ -71,6 +71,18 @@ enum{
 };
 
 enum{
+	GPIOA_PORT_CODE,
+	GPIOB_PORT_CODE,
+	GPIOC_PORT_CODE,
+	GPIOD_PORT_CODE,
+	GPIOE_PORT_CODE,
+	GPIOF_PORT_CODE,
+	GPIOG_PORT_CODE,
+	GPIOH_PORT_CODE,
+	GPIOI_PORT_CODE,
+};
+
+enum{
 	GPIO_SPEED_LOW,
 	GPIO_SPEED_MEDIUM,
 	GPIO_SPEED_HIGH,
@@ -105,5 +117,8 @@ void gpio_writeto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no, uint8_t val)
 void gpio_writeto_output_port(GPIO_RegDef_t *pGpiox ,uint16_t val);
 void gpio_toggleto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no);
 uint32_t gpio_read_input_pin(GPIO_RegDef_t *pGpiox, uint32_t pin_no);
+
+void gpio_interrupt_enable(uint8_t irq_num);
+void gpio_interrupt_disable(uint8_t irq_num);
 
 #endif /* GPIO_H_ */

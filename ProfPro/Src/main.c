@@ -59,10 +59,18 @@ int main(void)
 	gpio_init(&Gpio_pd_red);
 	gpio_init(&Gpio_pd_orange);
 
-
+/**
 	//A portunun 0. pini push button
 	GPIO_Handle_t Gpio_pd_button={GPIOA,{GPIO_PIN_NO_0, GPIO_MODE_IN, GPIO_SPEED_MEDIUM, 0, GPIO_NO_PUPD}};
 	gpio_init(&Gpio_pd_button);
+**/
+
+	//user button interrupt test
+	GPIO_Handle_t user_button;
+	user_button.gPIO_pinConfig.pin_number=GPIO_PIN_NO_0;
+	user_button.gPIO_pinConfig.pin_mode=GPIO_MODE_FRE_IT;
+	user_button.gPIO_pinConfig.pin_pupd= GPIO_NO_PUPD;
+	gpio_init(&user_button);
 
 
 	//gpio_writeto_output_pin(GPIOD , GPIO_PIN_GREEN, GPIO_PIN_SET); //GPIO_PIN_NO_15de yazılabilir GPIO_PIN_GREEN yerine

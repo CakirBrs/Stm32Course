@@ -29,6 +29,27 @@ PRIVATE void gpio_perip_en(GPIO_RegDef_t * pGpiox){
 }
 
 
+PRIVATE uint8_t get_port_code(const GPIO_RegDef_t * pGpioX){
+	if(pGpioX==GPIOA)
+		return GPIOA_PORT_CODE;
+	else if(pGpioX==GPIOB)
+		return GPIOB_PORT_CODE;
+	else if(pGpioX==GPIOC)
+		return GPIOC_PORT_CODE;
+	else if(pGpioX==GPIOD)
+		return GPIOD_PORT_CODE;
+	else if(pGpioX==GPIOE)
+		return GPIOE_PORT_CODE;
+	else if(pGpioX==GPIOF)
+		return GPIOF_PORT_CODE;
+	else if(pGpioX==GPIOG)
+		return GPIOG_PORT_CODE;
+	else if(pGpioX==GPIOH)
+		return GPIOH_PORT_CODE;
+	else if(pGpioX==GPIOI)
+		return GPIOI_PORT_CODE;
+}
+
 void gpio_init(GPIO_Handle_t * pGpio_handle){
 	uint32_t temp=0;
 
@@ -61,6 +82,16 @@ void gpio_init(GPIO_Handle_t * pGpio_handle){
 			EXTI->RTSR |= (1U <<pGpio_handle->gPIO_pinConfig.pin_number); //rising set
 			EXTI->FTSR |= (1U <<pGpio_handle->gPIO_pinConfig.pin_number); //falling set
 		}
+		//used port pin selection by SYSCF_EXTICRx
+		SYSCFG_CLOCK_ENABLE();
+		uint32_t syscfgr_exti_reg_no = pGpio_handle->gPIO_pinConfig.pin_number / 4;
+		uint32_t syscfgr_exti_reg_bit_no = pGpio_handle->gPIO_pinConfig.pin_number % 4;
+		uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+		SYSCFG->EXTICR[syscfgr_exti_reg_no] |= (1u<<(syscfgr_exti_reg_bit_no*4));
+
+		//Enable IMR
+		EXTI->IMR |= (1u<<pGpio_handle->gPIO_pinConfig.pin_number);
+		//NVIC
 	}
 
 	//speed ayarla
@@ -116,4 +147,23 @@ uint32_t gpio_read_input_pin(GPIO_RegDef_t *pGpiox, uint32_t pin_no){
 	res = pGpiox->IDR &(1u<<pin_no);
 	//return res;
 	return res!= 0? GPIO_PIN_SET : GPIO_PIN_RESET;
+}
+
+void gpio_interrupt_enable(uint8_t irq_num){
+	if(irq_num < 32)
+		NVIC_ISERx->NVIC_ISER0 |= ((1U<<irq_num ));
+	else if( irq_num < 64)
+		NVIC_ISERx->NVIC_ISER1 |= (1U<<(1U<<irq_num%32));
+	else if(irq_num <= 81)
+		NVIC_ISERx->NVIC_ISER2 |= (1U<<(1U<<irq_num%32));
+
+}
+
+void gpio_interrupt_disable(uint8_t irq_num){
+	if(irq_num < 32)
+		NVIC_ICERx->NVIC_ICER0 |= ((1U<<irq_num ));
+	else if( irq_num < 64)
+		NVIC_ICERx->NVIC_ICER1 |= (1U<<(1U<<irq_num%32));
+	else if(irq_num <= 81)
+		NVIC_ICERx->NVIC_ICER2 |= (1U<<(1U<<irq_num%32));
 }

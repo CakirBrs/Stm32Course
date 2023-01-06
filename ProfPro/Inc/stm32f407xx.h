@@ -1,6 +1,57 @@
 #ifndef _STM32F407XX_H
 #define _STM32F407XX_H
 
+
+//ARM Cortex M+ Processor NVIC Register
+/**
+#define NVIC_ISER0 						((volatile uint32_t*) 0xE00E100)
+#define NVIC_ISER1 						((volatile uint32_t*) 0xE00E104)
+#define NVIC_ISER2 						((volatile uint32_t*) 0xE00E108)
+#define NVIC_ISER3 						((volatile uint32_t*) 0xE00E10C)
+#define NVIC_ISER4 						((volatile uint32_t*) 0xE00E110)
+#define NVIC_ISER5 						((volatile uint32_t*) 0xE00E114)
+#define NVIC_ISER6 						((volatile uint32_t*) 0xE00E118)
+#define NVIC_ISER7 						((volatile uint32_t*) 0xE00E11C)
+**/
+
+#define NVIC_ISER_BASEADDR 					0xE00E100
+typedef struct{
+	volatile uint32_t NVIC_ISER0;
+	volatile uint32_t NVIC_ISER1;
+	volatile uint32_t NVIC_ISER2;
+	volatile uint32_t NVIC_ISER3;
+	volatile uint32_t NVIC_ISER4;
+	volatile uint32_t NVIC_ISER5;
+	volatile uint32_t NVIC_ISER6;
+	volatile uint32_t NVIC_ISER7;
+}NVIC_ISER_RegDef_t;
+#define NVIC_ISERx						((NVIC_ISER_RegDef_t*)NVIC_ISER_BASEADDR)
+
+
+#define NVIC_ICER_BASEADDR 					0xE000E180
+typedef struct{
+	volatile uint32_t NVIC_ICER0;
+	volatile uint32_t NVIC_ICER1;
+	volatile uint32_t NVIC_ICER2;
+	volatile uint32_t NVIC_ICER3;
+	volatile uint32_t NVIC_ICER4;
+	volatile uint32_t NVIC_ICER5;
+	volatile uint32_t NVIC_ICER6;
+	volatile uint32_t NVIC_ICER7;
+}NVIC_ICER_RegDef_t;
+#define NVIC_ICERx						((NVIC_ICER_RegDef_t*)NVIC_ICER_BASEADDR)
+
+/**
+#define NVIC_ICER0						((volatile uint32_t*)0xE000E180)
+#define NVIC_ICER1						((volatile uint32_t*)0xE000E184)
+#define NVIC_ICER2						((volatile uint32_t*)0xE000E188)
+#define NVIC_ICER3						((volatile uint32_t*)0xE000E18C)
+#define NVIC_ICER4						((volatile uint32_t*)0xE000E190)
+#define NVIC_ICER5						((volatile uint32_t*)0xE000E194)
+#define NVIC_ICER6						((volatile uint32_t*)0xE000E198)
+#define NVIC_ICER7						((volatile uint32_t*)0xE000E19C)
+**/
+
 //bus
 #define PERIPHERAL_BASE_ADDR 			0x40000000U
 #define APB1PERIPHERAL_BASE_ADDR 		PERIPHERAL_BASE_ADDR
@@ -84,7 +135,13 @@
 //#define _BASEADDR 				(AHB3PERIPHERAL_BASE_ADDR + 0x) //4 - 1:22:00
 
 
-
+#define IRQ_EXTI0				6
+#define IRQ_EXTI1				7
+#define IRQ_EXTI2				8
+#define IRQ_EXTI3				9
+#define IRQ_EXTI4				10  //bu doğru mu kontrol et
+#define IRQ_EXTI9_5				23
+#define IRQ_EXTI15_10			40
 
 
 
@@ -188,6 +245,12 @@ typedef struct{
 #define GPIOG_CLOCK_ENABLE()		(RCC->AHB1ENR |=(1<<6))
 #define GPIOH_CLOCK_ENABLE()		(RCC->AHB1ENR |=(1<<7))
 #define GPIOI_CLOCK_ENABLE()		(RCC->AHB1ENR |=(1<<8))
+
+#define SYSCFG_CLOCK_ENABLE()		(RCC->APB2ENR |=(1<<14))
+
+
+
+
 
 #endif
 
