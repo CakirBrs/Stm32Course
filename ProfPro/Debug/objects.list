@@ -1,3 +1,4 @@
+"./Src/coreM4.o"
 "./Src/gpio.o"
 "./Src/main.o"
 "./Src/syscalls.o"

@@ -14,7 +14,7 @@
 #define NVIC_ISER7 						((volatile uint32_t*) 0xE00E11C)
 **/
 
-#define NVIC_ISER_BASEADDR 					0xE000E100
+#define NVIC_ISER_BASEADDR 					0xE00E100
 typedef struct{
 	volatile uint32_t NVIC_ISER0;
 	volatile uint32_t NVIC_ISER1;
