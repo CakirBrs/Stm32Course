@@ -4163,3 +4163,593 @@ Finished building: default.size.stdout
  
 Finished building: ProfPro.list
  
+12:21:56 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:89:11: warning: unused variable 'port_code' [-Wunused-variable]
+   89 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'gpio_interrupt_enable':
+../Src/gpio.c:154:3: error: 'NVIC_ISERx' undeclared (first use in this function)
+  154 |   NVIC_ISERx->NVIC_ISER0 |= (1U<<irq_num );
+      |   ^~~~~~~~~~
+../Src/gpio.c:154:3: note: each undeclared identifier is reported only once for each function it appears in
+../Src/gpio.c: In function 'gpio_interrupt_disable':
+../Src/gpio.c:164:3: error: 'NVIC_ICERx' undeclared (first use in this function)
+  164 |   NVIC_ICERx->NVIC_ICER0 |= ((1U<<irq_num ));
+      |   ^~~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:51:1: warning: control reaches end of non-void function [-Wreturn-type]
+   51 | }
+      | ^
+../Src/main.c: In function 'main':
+../Src/main.c:64:10: warning: unused variable 'a' [-Wunused-variable]
+   64 |      int a =5;
+      |          ^
+In file included from ../Src/coreM4.c:7:
+../Inc/coreM4.h:19:11: error: unknown type name 'uint32_t'
+   19 |  volatile uint32_t NVIC_ISER0;
+      |           ^~~~~~~~
+../Inc/coreM4.h:20:11: error: unknown type name 'uint32_t'
+   20 |  volatile uint32_t NVIC_ISER1;
+      |           ^~~~~~~~
+../Inc/coreM4.h:21:11: error: unknown type name 'uint32_t'
+   21 |  volatile uint32_t NVIC_ISER2;
+      |           ^~~~~~~~
+../Inc/coreM4.h:22:11: error: unknown type name 'uint32_t'
+   22 |  volatile uint32_t NVIC_ISER3;
+      |           ^~~~~~~~
+../Inc/coreM4.h:23:11: error: unknown type name 'uint32_t'
+   23 |  volatile uint32_t NVIC_ISER4;
+      |           ^~~~~~~~
+../Inc/coreM4.h:24:11: error: unknown type name 'uint32_t'
+   24 |  volatile uint32_t NVIC_ISER5;
+      |           ^~~~~~~~
+../Inc/coreM4.h:25:11: error: unknown type name 'uint32_t'
+   25 |  volatile uint32_t NVIC_ISER6;
+      |           ^~~~~~~~
+../Inc/coreM4.h:26:11: error: unknown type name 'uint32_t'
+   26 |  volatile uint32_t NVIC_ISER7;
+      |           ^~~~~~~~
+../Inc/coreM4.h:30:11: error: unknown type name 'uint32_t'
+   30 |  volatile uint32_t NVIC_ICER0;
+      |           ^~~~~~~~
+../Inc/coreM4.h:31:11: error: unknown type name 'uint32_t'
+   31 |  volatile uint32_t NVIC_ICER1;
+      |           ^~~~~~~~
+../Inc/coreM4.h:32:11: error: unknown type name 'uint32_t'
+   32 |  volatile uint32_t NVIC_ICER2;
+      |           ^~~~~~~~
+../Inc/coreM4.h:33:11: error: unknown type name 'uint32_t'
+   33 |  volatile uint32_t NVIC_ICER3;
+      |           ^~~~~~~~
+../Inc/coreM4.h:34:11: error: unknown type name 'uint32_t'
+   34 |  volatile uint32_t NVIC_ICER4;
+      |           ^~~~~~~~
+../Inc/coreM4.h:35:11: error: unknown type name 'uint32_t'
+   35 |  volatile uint32_t NVIC_ICER5;
+      |           ^~~~~~~~
+../Inc/coreM4.h:36:11: error: unknown type name 'uint32_t'
+   36 |  volatile uint32_t NVIC_ICER6;
+      |           ^~~~~~~~
+../Inc/coreM4.h:37:11: error: unknown type name 'uint32_t'
+   37 |  volatile uint32_t NVIC_ICER7;
+      |           ^~~~~~~~
+make: *** [Src/subdir.mk:31: Src/gpio.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Src/subdir.mk:31: Src/coreM4.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:22:49 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:89:11: warning: unused variable 'port_code' [-Wunused-variable]
+   89 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'gpio_interrupt_enable':
+../Src/gpio.c:154:3: error: 'NVIC_ISERx' undeclared (first use in this function)
+  154 |   NVIC_ISERx->NVIC_ISER0 |= (1U<<irq_num );
+      |   ^~~~~~~~~~
+../Src/gpio.c:154:3: note: each undeclared identifier is reported only once for each function it appears in
+../Src/gpio.c: In function 'gpio_interrupt_disable':
+../Src/gpio.c:164:3: error: 'NVIC_ICERx' undeclared (first use in this function)
+  164 |   NVIC_ICERx->NVIC_ICER0 |= ((1U<<irq_num ));
+      |   ^~~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:51:1: warning: control reaches end of non-void function [-Wreturn-type]
+   51 | }
+      | ^
+make: *** [Src/subdir.mk:31: Src/gpio.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:23:29 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:89:11: warning: unused variable 'port_code' [-Wunused-variable]
+   89 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'gpio_interrupt_enable':
+../Src/gpio.c:154:3: error: 'NVIC_ISERx' undeclared (first use in this function)
+  154 |   NVIC_ISERx->NVIC_ISER0 |= (1U<<irq_num );
+      |   ^~~~~~~~~~
+../Src/gpio.c:154:3: note: each undeclared identifier is reported only once for each function it appears in
+../Src/gpio.c: In function 'gpio_interrupt_disable':
+../Src/gpio.c:164:3: error: 'NVIC_ICERx' undeclared (first use in this function)
+  164 |   NVIC_ICERx->NVIC_ICER0 |= ((1U<<irq_num ));
+      |   ^~~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:51:1: warning: control reaches end of non-void function [-Wreturn-type]
+   51 | }
+      | ^
+make: *** [Src/subdir.mk:31: Src/gpio.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:24:16 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1980	      8	   1568	   3556	    de4	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+12:24:26 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1980	      8	   1568	   3556	    de4	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+12:24:53 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1980	      8	   1568	   3556	    de4	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+12:26:28 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+../Src/main.c: In function 'main':
+../Src/main.c:61:10: warning: unused variable 'a' [-Wunused-variable]
+   61 |      int a =5;
+      |          ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1980	      8	   1568	   3556	    de4	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+12:26:59 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+../Src/main.c: In function 'main':
+../Src/main.c:61:10: warning: unused variable 'a' [-Wunused-variable]
+   61 |      int a =5;
+      |          ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1980	      8	   1568	   3556	    de4	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+12:29:34 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/utility.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/utility.d" -MT"Src/utility.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/utility.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+../Src/main.c: In function 'main':
+../Src/main.c:60:10: warning: unused variable 'a' [-Wunused-variable]
+   60 |      int a =5;
+      |          ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1980	      8	   1568	   3556	    de4	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+12:30:56 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'EXTI0_IRQHandler':
+../Src/gpio.c:179:2: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+  179 |  delay();
+      |  ^~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+12:31:30 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/utility.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/utility.d" -MT"Src/utility.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/utility.o"
+../Src/main.c: In function 'main':
+../Src/main.c:60:10: warning: unused variable 'a' [-Wunused-variable]
+   60 |      int a =5;
+      |          ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+12:31:36 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'EXTI0_IRQHandler':
+../Src/gpio.c:179:2: warning: implicit declaration of function 'mini_delay' [-Wimplicit-function-declaration]
+  179 |  mini_delay();
+      |  ^~~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+12:32:07 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+12:32:49 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+12:33:48 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+12:35:36 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'EXTI0_IRQHandler':
+../Src/gpio.c:179:2: warning: implicit declaration of function 'mini_delay' [-Wimplicit-function-declaration]
+  179 |  mini_delay();
+      |  ^~~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+../Src/main.c: In function 'main':
+../Src/main.c:60:10: warning: unused variable 'a' [-Wunused-variable]
+   60 |      int a =5;
+      |          ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+12:35:58 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+13:13:45 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:64:10: warning: unused variable 'a' [-Wunused-variable]
+   64 |      int a =5;
+      |          ^
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+13:13:56 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+13:14:25 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:64:10: warning: unused variable 'a' [-Wunused-variable]
+   64 |      int a =5;
+      |          ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1980	      8	   1568	   3556	    de4	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+13:15:27 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:64:10: warning: unused variable 'a' [-Wunused-variable]
+   64 |      int a =5;
+      |          ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   1980	      8	   1568	   3556	    de4	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+13:19:32 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:64:10: warning: unused variable 'a' [-Wunused-variable]
+   64 |      int a =5;
+      |          ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+13:20:12 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/utility.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/utility.d" -MT"Src/utility.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/utility.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+13:20:15 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+13:27:03 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+13:28:09 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:64:10: warning: unused variable 'a' [-Wunused-variable]
+   64 |      int a =5;
+      |          ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+13:28:13 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+13:28:35 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2028	      8	   1568	   3604	    e14	ProfPro.elf
+Finished building: default.size.stdout
+ 
+13:31:38 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:65:10: warning: unused variable 'a' [-Wunused-variable]
+   65 |      int a =5;
+      |          ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2032	      8	   1568	   3608	    e18	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+13:31:41 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2032	      8	   1568	   3608	    e18	ProfPro.elf
+Finished building: default.size.stdout
+ 
+13:57:23 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2032	      8	   1568	   3608	    e18	ProfPro.elf
+Finished building: default.size.stdout
+ 

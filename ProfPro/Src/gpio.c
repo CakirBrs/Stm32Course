@@ -7,6 +7,7 @@
 #include "gpio.h"
 
 
+
 PRIVATE void gpio_perip_en(GPIO_RegDef_t * pGpiox){
 	if(pGpiox==GPIOA)
 		GPIOA_CLOCK_ENABLE();
@@ -173,3 +174,5 @@ void clear_pending_reg(uint8_t pin_no){
 	if(EXTI->PR & (1<<pin_no))
 		EXTI->PR |= (1U<<pin_no);
 }
+
+

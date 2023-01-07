@@ -19,21 +19,21 @@
 #include <stdint.h> // ctrl+space oto tamamlama
 #include "stm32f407xx.h"
 #include "gpio.h"
+#include "utility.h"
+
 /*
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 */
 
-void delay(){
-	for(int i=0;i<1000000;++i)
-		;
-}
+
 
 #define BTN_PRESSED	1
 #define BTN_RELEASED 0
 
 void EXTI0_IRQHandler(void){
+	mini_delay();
 	clear_pending_reg(GPIO_PIN_NO_0);
 	gpio_toggleto_output_pin(GPIOD, GPIO_PIN_NO_15);
 }
@@ -50,12 +50,13 @@ int main(void)
 	//user button interrupt test
 	GPIO_Handle_t user_button;
 	user_button.pGpioX=GPIOA;
+	user_button.gPIO_pinConfig.pin_speed= GPIO_SPEED_HIGH;
 	user_button.gPIO_pinConfig.pin_number=GPIO_PIN_NO_0;
-	user_button.gPIO_pinConfig.pin_mode=GPIO_MODE_RE_IT;
+	user_button.gPIO_pinConfig.pin_mode=GPIO_MODE_FE_IT;
 	user_button.gPIO_pinConfig.pin_pupd= GPIO_NO_PUPD;
 	gpio_init(&user_button);
 	gpio_interrupt_enable(IRQ_EXTI0);
-//38.dk dan itibaren devam etmedim sorun var onu çöz önce////////////////////////////////
+
 
 
     while(1)

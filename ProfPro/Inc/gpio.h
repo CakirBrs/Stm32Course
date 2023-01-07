@@ -9,7 +9,7 @@
 #define GPIO_H_
 #include <stdint.h>
 #include "stm32f407xx.h"
-
+#include "coreM4.h"
 
 #define PUBLIC
 #define PRIVATE		static
@@ -123,4 +123,5 @@ void gpio_interrupt_disable(uint8_t irq_num);
 
 void clear_pending_reg(uint8_t pin_no);
 
+//void EXTI0_IRQHandler(void);
 #endif /* GPIO_H_ */
