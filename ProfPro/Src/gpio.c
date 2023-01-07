@@ -150,24 +150,7 @@ uint32_t gpio_read_input_pin(GPIO_RegDef_t *pGpiox, uint32_t pin_no){
 	return res!= 0? GPIO_PIN_SET : GPIO_PIN_RESET;
 }
 
-void gpio_interrupt_enable(uint8_t irq_num){
-	if(irq_num < 32)
-		NVIC_ISERx->NVIC_ISER0 |= (1U<<irq_num );
-	else if( irq_num < 64)
-		NVIC_ISERx->NVIC_ISER1 |= (1U<<(irq_num%32));
-	else if(irq_num <= 81)
-		NVIC_ISERx->NVIC_ISER2 |= (1U<<(irq_num%32));
 
-}
-
-void gpio_interrupt_disable(uint8_t irq_num){
-	if(irq_num < 32)
-		NVIC_ICERx->NVIC_ICER0 |= ((1U<<irq_num ));
-	else if( irq_num < 64)
-		NVIC_ICERx->NVIC_ICER1 |= (1U<<(irq_num%32));
-	else if(irq_num <= 81)
-		NVIC_ICERx->NVIC_ICER2 |= (1U<<(irq_num%32));
-}
 
 void clear_pending_reg(uint8_t pin_no){
 	//clear PR

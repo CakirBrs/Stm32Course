@@ -1,6 +1,6 @@
 #ifndef _STM32F407XX_H
 #define _STM32F407XX_H
-
+#include  <stdint.h>
 
 
 //bus
@@ -80,12 +80,13 @@
 //ahb2
 
 #define DCMI_BASEADDR 				(AHB2PERIPHERAL_BASE_ADDR + 0x0000)
-#define RNG_BASEADDR 				(AHB2PERIPHERAL_BASE_ADDR + 0x0800)
+#define RNG_BASEADDR 				(AHB2PERIPHERAL_BASE_ADDR + 0x10800)
 
 //ahb3
 //#define _BASEADDR 				(AHB3PERIPHERAL_BASE_ADDR + 0x) //4 - 1:22:00
 
 
+//IRQ Numbers
 #define IRQ_EXTI0				6
 #define IRQ_EXTI1				7
 #define IRQ_EXTI2				8
@@ -94,6 +95,7 @@
 #define IRQ_EXTI9_5				23
 #define IRQ_EXTI15_10			40
 
+#define IRQ_HASH_RNG			80
 
 
 
@@ -167,10 +169,15 @@ typedef struct{
 	//0x1c + 0x4 = 0x20 cmpcr olacak
 	uint32_t RESERVED0[2];
 	volatile uint32_t CMPCR;
-
-
-
 }SYSCFG_RegDef_t;
+
+
+typedef struct{
+	volatile uint32_t CR;
+	volatile uint32_t SR;
+	volatile uint32_t DR;
+}RNG_RegDef_t;
+
 
 #define 	GPIOA					((GPIO_RegDef_t*)GPIOA_BASEADDR)
 #define 	GPIOB					((GPIO_RegDef_t*)GPIOB_BASEADDR)
@@ -186,6 +193,8 @@ typedef struct{
 #define 	RCC  					((RCC_RegDef_t *) RCC_BASEADDR)
 #define		EXTI					((EXTI_RegDef_t *) EXTI_BASEADDR)
 #define 	SYSCFG					((SYSCFG_RegDef_t *) SYSCFG_BASEADDR)
+#define 	RNG 					((RNG_RegDef_t *) RNG_BASEADDR)
+
 
 #define GPIOA_CLOCK_ENABLE()		(RCC->AHB1ENR |=(1<<0))
 #define GPIOB_CLOCK_ENABLE()		(RCC->AHB1ENR |=(1<<1))
@@ -198,8 +207,7 @@ typedef struct{
 #define GPIOI_CLOCK_ENABLE()		(RCC->AHB1ENR |=(1<<8))
 
 #define SYSCFG_CLOCK_ENABLE()		(RCC->APB2ENR |=(1<<14))
-
-
+#define RNG_CLOCK_ENABLE()			(RCC->AHB2ENR |=(1<<6))
 
 
 

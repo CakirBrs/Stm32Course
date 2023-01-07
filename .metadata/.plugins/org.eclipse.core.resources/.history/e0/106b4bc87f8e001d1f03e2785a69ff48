@@ -1,0 +1,15 @@
+/*
+ * rng.h
+ *
+ *  Created on: 7 Oca 2023
+ *      Author: metab
+ */
+
+#ifndef RNG_H_
+#define RNG_H_
+
+//#include "stm32f407xx.h"
+
+void rng_init();
+
+#endif /* RNG_H_ */

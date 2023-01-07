@@ -1,10 +1,10 @@
-13:57:23 **** Incremental Build of configuration Debug for project ProfPro ****
+18:05:55 **** Incremental Build of configuration Debug for project ProfPro ****
 make -j8 all 
 arm-none-eabi-size   ProfPro.elf 
    text	   data	    bss	    dec	    hex	filename
-   2032	      8	   1568	   3608	    e18	ProfPro.elf
+   1144	      8	   1568	   2720	    aa0	ProfPro.elf
 Finished building: default.size.stdout
  
 
-13:57:23 Build Finished. 0 errors, 0 warnings. (took 484ms)
+18:05:55 Build Finished. 0 errors, 0 warnings. (took 428ms)
 

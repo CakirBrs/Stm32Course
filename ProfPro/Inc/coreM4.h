@@ -42,6 +42,7 @@ typedef struct{
 #define NVIC_ISERx						((NVIC_ISER_RegDef_t*)NVIC_ISER_BASEADDR)
 #define NVIC_ICERx						((NVIC_ICER_RegDef_t*)NVIC_ICER_BASEADDR)
 
-
+void nvic_irqno_enable(uint8_t irq_num);
+void nvic_irqno_disable(uint8_t irq_num);
 
 #endif /* COREM4_H_ */

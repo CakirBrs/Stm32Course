@@ -20,7 +20,7 @@
 #include "stm32f407xx.h"
 #include "gpio.h"
 #include "utility.h"
-
+#include "rng.h"
 /*
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
@@ -32,16 +32,37 @@
 #define BTN_PRESSED	1
 #define BTN_RELEASED 0
 
+uint32_t g_random_number;
+
+
 void EXTI0_IRQHandler(void){
 	mini_delay();
 	clear_pending_reg(GPIO_PIN_NO_0);
 	gpio_toggleto_output_pin(GPIOD, GPIO_PIN_NO_15);
 }
 
+
+void HASH_RNG_IRQHandler(void){
+	if(((RNG->SR & RNG_CEIS)==0) && ((RNG->SR & RNG_SEIS)==0) && ((RNG->SR & RNG_DRDY)==1))
+	{
+		g_random_number = RNG->DR;
+	}else if((RNG->SR & RNG_SEIS)==1){
+		//hatalı durumlar
+		;
+	}
+
+
+
+
+}
+
+
+
+
 int main(void)
 {
 
-
+/**
 	GPIO_Handle_t Gpio_pd_blue={GPIOD,{GPIO_PIN_NO_15,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
 
 	gpio_init(&Gpio_pd_blue);
@@ -55,14 +76,15 @@ int main(void)
 	user_button.gPIO_pinConfig.pin_mode=GPIO_MODE_FE_IT;
 	user_button.gPIO_pinConfig.pin_pupd= GPIO_NO_PUPD;
 	gpio_init(&user_button);
-	gpio_interrupt_enable(IRQ_EXTI0);
-
+	nvic_irqno_enable(IRQ_EXTI0);
+**/
+	rng_init();
 
 
     while(1)
     {
 
-    	int a =5;
+    	int a =g_random_number;
 
 
     }

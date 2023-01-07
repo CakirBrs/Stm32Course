@@ -1,0 +1,19 @@
+/*
+ * rng.h
+ *
+ *  Created on: 7 Oca 2023
+ *      Author: metab
+ */
+
+#ifndef RNG_H_
+#define RNG_H_
+
+#include <stdint.h>
+#include "stm32f407xx.h"
+
+#define IE 		(1U<<3)
+
+
+void rng_init();
+
+#endif /* RNG_H_ */

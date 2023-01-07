@@ -118,8 +118,7 @@ void gpio_writeto_output_port(GPIO_RegDef_t *pGpiox ,uint16_t val);
 void gpio_toggleto_output_pin(GPIO_RegDef_t *pGpiox ,uint8_t pin_no);
 uint32_t gpio_read_input_pin(GPIO_RegDef_t *pGpiox, uint32_t pin_no);
 
-void gpio_interrupt_enable(uint8_t irq_num);
-void gpio_interrupt_disable(uint8_t irq_num);
+
 
 void clear_pending_reg(uint8_t pin_no);
 
