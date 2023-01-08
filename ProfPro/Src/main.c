@@ -44,9 +44,35 @@ void EXTI0_IRQHandler(void){
 
 
 
+void task_led(){
 
-void SysTick_Handler(){
-	gpio_toggleto_output_pin(GPIOD, GPIO_PIN_NO_15);
+	static enum {
+		S_LED_OFF,
+		S_LED_ON
+	}state=S_LED_OFF;
+
+	static clock_t t0; //duruma ilk giriş sati
+	static clock_t t1; //güncel giriş saati
+
+	t1 = clock();
+
+	switch(state){
+	case S_LED_OFF:
+		if(t1>=t0+800)
+		{
+			gpio_writeto_output_pin(GPIOD,GPIO_PIN_NO_15,GPIO_PIN_SET);
+			t0=t1;
+			state=S_LED_ON;
+		}
+		break;
+	case S_LED_ON:
+		if(t1>=t0+200){
+			gpio_writeto_output_pin(GPIOD, GPIO_PIN_NO_15, GPIO_PIN_RESET);
+			t0=t1;
+			state=S_LED_OFF;
+		}
+		break;
+	}
 }
 
 
@@ -69,7 +95,7 @@ int main(void)
 	gpio_init(&user_button);
 	nvic_irqno_enable(IRQ_EXTI0);
 **/
-	rng_init();
+	//rng_init();
 
 	GPIO_Handle_t Gpio_pd_blue={GPIOD,{GPIO_PIN_NO_15,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
 	GPIO_Handle_t Gpio_pd_red={GPIOD,{GPIO_PIN_NO_14,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
@@ -81,13 +107,13 @@ int main(void)
 	gpio_init(&Gpio_pd_red);
 	gpio_init(&Gpio_pd_orange);
 
-	systick_config(SYSTEM_FREQ);
+	systick_config(SYSTEM_FREQ/1000); //1ms de bi systic kesme
 
     while(1)
     {
     	//delay();
     	//toggle_board_random_leds();
-
+    	task_led();
 
     }
 }

@@ -1,3 +1,3 @@
 ../Src/main.c:39:6:EXTI0_IRQHandler	8	static
-../Src/main.c:48:6:SysTick_Handler	8	static
-../Src/main.c:53:5:main	56	static
+../Src/main.c:47:6:task_led	8	static
+../Src/main.c:79:5:main	56	static

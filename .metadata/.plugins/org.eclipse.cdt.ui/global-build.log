@@ -68846,3 +68846,124 @@ arm-none-eabi-size   ProfPro.elf
    2584	      8	   1568	   4160	   1040	ProfPro.elf
 Finished building: default.size.stdout
  
+18:59:53 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/rng.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/rng.d" -MT"Src/rng.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/rng.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/rng.c: In function 'HASH_RNG_IRQHandler':
+../Src/rng.c:45:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   45 |   if((RNG->SR & RNG_CEIS)==1){
+      |                          ^~
+../Src/rng.c:48:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   48 |   if((RNG->SR & RNG_SEIS)==1){
+      |                          ^~
+../Src/main.c: In function 'task_led':
+../Src/main.c:51:11: error: expected ',' or '}' before ';' token
+   51 |   S_LED_ON;
+      |           ^
+../Src/gpio.c: In function 'toggle_board_random_leds':
+../Src/gpio.c:162:28: warning: implicit declaration of function 'get_random_number' [-Wimplicit-function-declaration]
+  162 |  uint8_t led_no =(uint8_t)(get_random_number()%4 + 12);
+      |                            ^~~~~~~~~~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+../Src/main.c:52:9: error: 'LED_OFF' undeclared (first use in this function); did you mean 'S_LED_OFF'?
+   52 |  }state=LED_OFF;
+      |         ^~~~~~~
+      |         S_LED_OFF
+../Src/main.c:52:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:65:7: error: label at end of compound statement
+   65 |  case S_LED_ON:
+      |       ^~~~~~~~
+make: *** [Src/subdir.mk:37: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/coreM4.c: In function 'clock':
+../Src/coreM4.c:55:1: warning: control reaches end of non-void function [-Wreturn-type]
+   55 | }
+      | ^
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:00:11 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'task_led':
+../Src/main.c:51:11: error: expected ',' or '}' before ';' token
+   51 |   S_LED_ON;
+      |           ^
+../Src/main.c:65:7: error: label at end of compound statement
+   65 |  case S_LED_ON:
+      |       ^~~~~~~~
+make: *** [Src/subdir.mk:37: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:00:25 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'task_led':
+../Src/main.c:52:9: error: 'LED_OFF' undeclared (first use in this function); did you mean 'S_LED_OFF'?
+   52 |  }state=LED_OFF;
+      |         ^~~~~~~
+      |         S_LED_OFF
+../Src/main.c:52:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:65:7: error: label at end of compound statement
+   65 |  case S_LED_ON:
+      |       ^~~~~~~~
+make: *** [Src/subdir.mk:37: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:00:29 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'task_led':
+../Src/main.c:65:7: error: label at end of compound statement
+   65 |  case S_LED_ON:
+      |       ^~~~~~~~
+make: *** [Src/subdir.mk:37: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:00:37 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2592	      8	   1568	   4168	   1048	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+19:06:08 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2636	      8	   1584	   4228	   1084	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+19:07:39 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2636	      8	   1584	   4228	   1084	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
