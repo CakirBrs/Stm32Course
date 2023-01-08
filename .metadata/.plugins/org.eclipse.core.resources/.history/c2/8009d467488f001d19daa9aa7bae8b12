@@ -45,9 +45,7 @@ void EXTI0_IRQHandler(void){
 
 
 
-void SysTick_Handler(){
-	gpio_toggleto_output_pin(GPIOD, GPIO_PIN_NO_15);
-}
+
 
 
 int main(void)
@@ -81,12 +79,10 @@ int main(void)
 	gpio_init(&Gpio_pd_red);
 	gpio_init(&Gpio_pd_orange);
 
-	systick_config(SYSTEM_FREQ);
-
     while(1)
     {
-    	//delay();
-    	//toggle_board_random_leds();
+    	delay();
+    	toggle_board_random_leds();
 
 
     }

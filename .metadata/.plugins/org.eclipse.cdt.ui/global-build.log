@@ -68545,3 +68545,304 @@ arm-none-eabi-size   ProfPro.elf
    2632	      8	   1568	   4208	   1070	ProfPro.elf
 Finished building: default.size.stdout
  
+12:56:55 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/rng.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/rng.d" -MT"Src/rng.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/rng.o"
+../Src/rng.c: In function 'HASH_RNG_IRQHandler':
+../Src/rng.c:39:3: error: 'g_random_number' undeclared (first use in this function); did you mean 'get_random_number'?
+   39 |   g_random_number = RNG->DR;
+      |   ^~~~~~~~~~~~~~~
+      |   get_random_number
+../Src/rng.c:39:3: note: each undeclared identifier is reported only once for each function it appears in
+../Src/rng.c:45:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   45 |   if((RNG->SR & RNG_CEIS)==1){
+      |                          ^~
+../Src/rng.c:48:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   48 |   if((RNG->SR & RNG_SEIS)==1){
+      |                          ^~
+make: *** [Src/subdir.mk:37: Src/rng.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:57:13 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/rng.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/rng.d" -MT"Src/rng.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/rng.o"
+../Src/rng.c: In function 'HASH_RNG_IRQHandler':
+../Src/rng.c:45:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   45 |   if((RNG->SR & RNG_CEIS)==1){
+      |                          ^~
+../Src/rng.c:48:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   48 |   if((RNG->SR & RNG_SEIS)==1){
+      |                          ^~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2620	      8	   1568	   4196	   1064	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+12:57:22 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2620	      8	   1568	   4196	   1064	ProfPro.elf
+Finished building: default.size.stdout
+ 
+13:55:59 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/rng.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/rng.d" -MT"Src/rng.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/rng.o"
+../Src/rng.c: In function 'HASH_RNG_IRQHandler':
+../Src/rng.c:45:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   45 |   if((RNG->SR & RNG_CEIS)==1){
+      |                          ^~
+../Src/rng.c:48:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   48 |   if((RNG->SR & RNG_SEIS)==1){
+      |                          ^~
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'toggle_board_random_leds':
+../Src/gpio.c:162:28: warning: implicit declaration of function 'get_random_number' [-Wimplicit-function-declaration]
+  162 |  uint8_t led_no =(uint8_t)(get_random_number()%4 + 12);
+      |                            ^~~~~~~~~~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2620	      8	   1568	   4196	   1064	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+13:56:35 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/rng.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/rng.d" -MT"Src/rng.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/rng.o"
+../Src/rng.c: In function 'HASH_RNG_IRQHandler':
+../Src/rng.c:45:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   45 |   if((RNG->SR & RNG_CEIS)==1){
+      |                          ^~
+../Src/rng.c:48:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   48 |   if((RNG->SR & RNG_SEIS)==1){
+      |                          ^~
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'toggle_board_random_leds':
+../Src/gpio.c:162:28: warning: implicit declaration of function 'get_random_number' [-Wimplicit-function-declaration]
+  162 |  uint8_t led_no =(uint8_t)(get_random_number()%4 + 12);
+      |                            ^~~~~~~~~~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2620	      8	   1568	   4196	   1064	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+14:10:27 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/rng.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/rng.d" -MT"Src/rng.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/rng.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'toggle_board_random_leds':
+../Src/gpio.c:162:28: warning: implicit declaration of function 'get_random_number' [-Wimplicit-function-declaration]
+  162 |  uint8_t led_no =(uint8_t)(get_random_number()%4 + 12);
+      |                            ^~~~~~~~~~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+../Src/rng.c: In function 'HASH_RNG_IRQHandler':
+../Src/rng.c:45:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   45 |   if((RNG->SR & RNG_CEIS)==1){
+      |                          ^~
+../Src/rng.c:48:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   48 |   if((RNG->SR & RNG_SEIS)==1){
+      |                          ^~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2620	      8	   1568	   4196	   1064	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+14:11:01 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/rng.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/rng.d" -MT"Src/rng.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/rng.o"
+../Src/coreM4.c: In function 'systick_config':
+../Src/coreM4.c:36:1: error: expected identifier before '}' token
+   36 | }
+      | ^
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'toggle_board_random_leds':
+../Src/gpio.c:162:28: warning: implicit declaration of function 'get_random_number' [-Wimplicit-function-declaration]
+  162 |  uint8_t led_no =(uint8_t)(get_random_number()%4 + 12);
+      |                            ^~~~~~~~~~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+make: *** [Src/subdir.mk:37: Src/coreM4.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/rng.c: In function 'HASH_RNG_IRQHandler':
+../Src/rng.c:45:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   45 |   if((RNG->SR & RNG_CEIS)==1){
+      |                          ^~
+../Src/rng.c:48:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   48 |   if((RNG->SR & RNG_SEIS)==1){
+      |                          ^~
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:11:33 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2620	      8	   1568	   4196	   1064	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+14:34:26 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/rng.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/rng.d" -MT"Src/rng.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/rng.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'toggle_board_random_leds':
+../Src/gpio.c:162:28: warning: implicit declaration of function 'get_random_number' [-Wimplicit-function-declaration]
+  162 |  uint8_t led_no =(uint8_t)(get_random_number()%4 + 12);
+      |                            ^~~~~~~~~~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+../Src/rng.c: In function 'HASH_RNG_IRQHandler':
+../Src/rng.c:45:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   45 |   if((RNG->SR & RNG_CEIS)==1){
+      |                          ^~
+../Src/rng.c:48:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   48 |   if((RNG->SR & RNG_SEIS)==1){
+      |                          ^~
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2500	      8	   1568	   4076	    fec	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+14:36:34 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/coreM4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/coreM4.d" -MT"Src/coreM4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/coreM4.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/rng.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/rng.d" -MT"Src/rng.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/rng.o"
+../Src/gpio.c: In function 'gpio_init':
+../Src/gpio.c:90:11: warning: unused variable 'port_code' [-Wunused-variable]
+   90 |   uint8_t port_code = get_port_code(pGpio_handle->pGpioX);
+      |           ^~~~~~~~~
+../Src/gpio.c: In function 'toggle_board_random_leds':
+../Src/gpio.c:162:28: warning: implicit declaration of function 'get_random_number' [-Wimplicit-function-declaration]
+  162 |  uint8_t led_no =(uint8_t)(get_random_number()%4 + 12);
+      |                            ^~~~~~~~~~~~~~~~~
+../Src/gpio.c: In function 'get_port_code':
+../Src/gpio.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+   52 | }
+      | ^
+../Src/rng.c: In function 'HASH_RNG_IRQHandler':
+../Src/rng.c:45:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   45 |   if((RNG->SR & RNG_CEIS)==1){
+      |                          ^~
+../Src/rng.c:48:26: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+   48 |   if((RNG->SR & RNG_SEIS)==1){
+      |                          ^~
+../Src/main.c: In function 'main':
+../Src/main.c:84:29: error: expected ';' before 'while'
+   84 |  systick_config(SYSTEM_FREQ)
+      |                             ^
+      |                             ;
+   85 | 
+   86 |     while(1)
+      |     ~~~~~                    
+make: *** [Src/subdir.mk:37: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:36:38 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "ProfPro.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\metab\STM32CubeIDE\workspace_1.10.1_CourseWS\ProfPro\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ProfPro.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ProfPro.elf
+ 
+arm-none-eabi-size   ProfPro.elf 
+arm-none-eabi-objdump -h -S  ProfPro.elf  > "ProfPro.list"
+   text	   data	    bss	    dec	    hex	filename
+   2584	      8	   1568	   4160	   1040	ProfPro.elf
+Finished building: default.size.stdout
+ 
+Finished building: ProfPro.list
+ 
+14:38:14 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2584	      8	   1568	   4160	   1040	ProfPro.elf
+Finished building: default.size.stdout
+ 
+14:39:32 **** Incremental Build of configuration Debug for project ProfPro ****
+make -j8 all 
+arm-none-eabi-size   ProfPro.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2584	      8	   1568	   4160	   1040	ProfPro.elf
+Finished building: default.size.stdout
+ 

@@ -81,7 +81,7 @@ int main(void)
 	gpio_init(&Gpio_pd_red);
 	gpio_init(&Gpio_pd_orange);
 
-	systick_config(SYSTEM_FREQ);
+	systick_config(SYSTEM_FREQ)
 
     while(1)
     {

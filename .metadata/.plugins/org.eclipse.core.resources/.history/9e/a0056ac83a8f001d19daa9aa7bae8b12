@@ -43,11 +43,34 @@ void EXTI0_IRQHandler(void){
 }
 
 
+void HASH_RNG_IRQHandler(void){
+	if(((RNG->SR & RNG_CEIS)==0) && ((RNG->SR & RNG_SEIS)==0) && ((RNG->SR & RNG_DRDY)==1))
+	{
+		g_random_number = RNG->DR;
+		RNG->CR &= ~IE;
+		RNG->CR &= ~RNGEN;
+		nvic_irqno_disable(IRQ_HASH_RNG);
+	}else {//hatalı durum düzeltme
+
+		if((RNG->SR & RNG_CEIS)==1){
+			RNG->CR &= ~RNG_CEIS;
+		}
+		if((RNG->SR & RNG_SEIS)==1){
+			RNG->CR &= ~RNG_SEIS;
+		}
+		//resetle ve yeniden başlat
+		RCC->AHB2STR = RNGRST;//resetleme ayarı ama bi alttaki satırdaki gibi tekrar açmazsan kapalı kalır.
+		RCC->AHB2STR &= ~RNGRST;
+		RNG->CR |= RNGEN;
+		RNG->CR |= IE;
+	}
 
 
-void SysTick_Handler(){
-	gpio_toggleto_output_pin(GPIOD, GPIO_PIN_NO_15);
+
+
 }
+
+
 
 
 int main(void)
@@ -81,12 +104,10 @@ int main(void)
 	gpio_init(&Gpio_pd_red);
 	gpio_init(&Gpio_pd_orange);
 
-	systick_config(SYSTEM_FREQ);
-
     while(1)
     {
-    	//delay();
-    	//toggle_board_random_leds();
+    	delay();
+    	toggle_board_random_leds();
 
 
     }

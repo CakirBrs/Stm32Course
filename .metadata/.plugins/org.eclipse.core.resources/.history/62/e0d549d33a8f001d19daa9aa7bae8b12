@@ -36,7 +36,7 @@ void rng_init(){
 void HASH_RNG_IRQHandler(void){
 	if(((RNG->SR & RNG_CEIS)==0) && ((RNG->SR & RNG_SEIS)==0) && ((RNG->SR & RNG_DRDY)==1))
 	{
-		//g_random_number = RNG->DR;
+		g_random_number = RNG->DR;
 		RNG->CR &= ~IE;
 		RNG->CR &= ~RNGEN;
 		nvic_irqno_disable(IRQ_HASH_RNG);

@@ -32,7 +32,6 @@
 #define RNGRST		(1u<<6)
 
 void rng_init();
-void HASH_RNG_IRQHandler(void);
 int64_t get_random_number();
 
 #endif /* RNG_H_ */
