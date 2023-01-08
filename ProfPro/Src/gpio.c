@@ -158,4 +158,8 @@ void clear_pending_reg(uint8_t pin_no){
 		EXTI->PR |= (1U<<pin_no);
 }
 
+void toggle_board_random_leds(){
+	uint8_t led_no =(uint8_t)(get_random_number()%4 + 12);
+	gpio_toggleto_output_pin(GPIOD, led_no);
+}
 

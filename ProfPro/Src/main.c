@@ -21,6 +21,7 @@
 #include "gpio.h"
 #include "utility.h"
 #include "rng.h"
+#include "coreM4.h"
 /*
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
@@ -46,9 +47,22 @@ void HASH_RNG_IRQHandler(void){
 	if(((RNG->SR & RNG_CEIS)==0) && ((RNG->SR & RNG_SEIS)==0) && ((RNG->SR & RNG_DRDY)==1))
 	{
 		g_random_number = RNG->DR;
-	}else if((RNG->SR & RNG_SEIS)==1){
-		//hatalı durumlar
-		;
+		RNG->CR &= ~IE;
+		RNG->CR &= ~RNGEN;
+		nvic_irqno_disable(IRQ_HASH_RNG);
+	}else {//hatalı durum düzeltme
+
+		if((RNG->SR & RNG_CEIS)==1){
+			RNG->CR &= ~RNG_CEIS;
+		}
+		if((RNG->SR & RNG_SEIS)==1){
+			RNG->CR &= ~RNG_SEIS;
+		}
+		//resetle ve yeniden başlat
+		RCC->AHB2STR = RNGRST;//resetleme ayarı ama bi alttaki satırdaki gibi tekrar açmazsan kapalı kalır.
+		RCC->AHB2STR &= ~RNGRST;
+		RNG->CR |= RNGEN;
+		RNG->CR |= IE;
 	}
 
 
@@ -80,11 +94,20 @@ int main(void)
 **/
 	rng_init();
 
+	GPIO_Handle_t Gpio_pd_blue={GPIOD,{GPIO_PIN_NO_15,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+	GPIO_Handle_t Gpio_pd_red={GPIOD,{GPIO_PIN_NO_14,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+	GPIO_Handle_t Gpio_pd_orange={GPIOD,{GPIO_PIN_NO_13,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+	GPIO_Handle_t Gpio_pd_green={GPIOD,{GPIO_PIN_NO_12,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+
+	gpio_init(&Gpio_pd_blue);
+	gpio_init(&Gpio_pd_green);
+	gpio_init(&Gpio_pd_red);
+	gpio_init(&Gpio_pd_orange);
 
     while(1)
     {
-
-    	int a =g_random_number;
+    	delay();
+    	toggle_board_random_leds();
 
 
     }

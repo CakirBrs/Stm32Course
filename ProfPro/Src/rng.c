@@ -8,6 +8,9 @@
 
 #include "rng.h"
 
+
+
+
 void rng_init(){
 
 	//PLL on
@@ -27,4 +30,17 @@ void rng_init(){
 	//3 seis ve ceis oku
 	nvic_irqno_enable(IRQ_HASH_RNG);
 
+}
+
+
+
+
+
+
+
+int64_t get_random_number(){
+	rng_init();
+	//if(RNG->CR & RNGEN)
+	return RNG->DR;
+	//return RNG_ERROR;
 }

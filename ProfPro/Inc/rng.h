@@ -12,6 +12,8 @@
 #include "stm32f407xx.h"
 #include "coreM4.h"
 
+#define RNG_ERROR -1
+
 //RNG CR BITS
 #define IE 			(1U<<3)
 #define RNGEN 		(1U<<2)
@@ -27,8 +29,9 @@
 //Rng ile alakalı değil
 #define PLLON		(1U<<24)
 #define PLLREADY	(1U<<25)
-
+#define RNGRST		(1u<<6)
 
 void rng_init();
+int64_t get_random_number();
 
 #endif /* RNG_H_ */
