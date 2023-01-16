@@ -7,28 +7,34 @@
 C_SRCS += \
 ../Src/coreM4.c \
 ../Src/gpio.c \
+../Src/lcd.c \
 ../Src/main.c \
 ../Src/rng.c \
 ../Src/syscalls.c \
 ../Src/sysmem.c \
+../Src/timer.c \
 ../Src/utility.c 
 
 OBJS += \
 ./Src/coreM4.o \
 ./Src/gpio.o \
+./Src/lcd.o \
 ./Src/main.o \
 ./Src/rng.o \
 ./Src/syscalls.o \
 ./Src/sysmem.o \
+./Src/timer.o \
 ./Src/utility.o 
 
 C_DEPS += \
 ./Src/coreM4.d \
 ./Src/gpio.d \
+./Src/lcd.d \
 ./Src/main.d \
 ./Src/rng.d \
 ./Src/syscalls.d \
 ./Src/sysmem.d \
+./Src/timer.d \
 ./Src/utility.d 
 
 
@@ -39,7 +45,7 @@ Src/%.o Src/%.su: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/coreM4.d ./Src/coreM4.o ./Src/coreM4.su ./Src/gpio.d ./Src/gpio.o ./Src/gpio.su ./Src/main.d ./Src/main.o ./Src/main.su ./Src/rng.d ./Src/rng.o ./Src/rng.su ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/utility.d ./Src/utility.o ./Src/utility.su
+	-$(RM) ./Src/coreM4.d ./Src/coreM4.o ./Src/coreM4.su ./Src/gpio.d ./Src/gpio.o ./Src/gpio.su ./Src/lcd.d ./Src/lcd.o ./Src/lcd.su ./Src/main.d ./Src/main.o ./Src/main.su ./Src/rng.d ./Src/rng.o ./Src/rng.su ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/timer.d ./Src/timer.o ./Src/timer.su ./Src/utility.d ./Src/utility.o ./Src/utility.su
 
 .PHONY: clean-Src
 

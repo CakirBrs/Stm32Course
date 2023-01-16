@@ -1,0 +1,4 @@
+../Src/timer.c:11:8:timer_clock_enable	16	static
+../Src/timer.c:37:6:timer_init	32	static
+../Src/timer.c:54:6:timer_reset	24	static
+../Src/timer.c:58:6:timer_start	24	static

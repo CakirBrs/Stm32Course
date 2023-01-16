@@ -1,0 +1,9 @@
+../Src/lcd.c:19:6:lcd_send_command	16	static
+../Src/lcd.c:29:6:lcd_print_string	16	static
+../Src/lcd.c:35:6:lcd_print_char	16	static
+../Src/lcd.c:45:6:lcd_init	24	static
+../Src/lcd.c:88:13:write_nibble	16	static
+../Src/lcd.c:99:6:lcd_clear_display	8	static
+../Src/lcd.c:104:6:lcd_display_on	16	static
+../Src/lcd.c:108:6:mdelay	24	static
+../Src/lcd.c:112:6:udelay	24	static

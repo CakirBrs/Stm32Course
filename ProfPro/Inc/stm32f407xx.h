@@ -179,6 +179,37 @@ typedef struct{
 }RNG_RegDef_t;
 
 
+typedef struct{
+	volatile uint32_t CR1;
+	volatile uint32_t CR2;
+	volatile uint32_t SMCR;
+	volatile uint32_t DIER;
+	volatile uint32_t SR;
+	volatile uint32_t EGR;
+	volatile uint32_t CCMR1;
+	volatile uint32_t CCMR2;
+	volatile uint32_t CCER;
+	volatile uint32_t CNT;
+	volatile uint32_t PSC;
+	volatile uint32_t ARR;
+	volatile uint32_t RCR;
+	volatile uint32_t CCR1;
+	volatile uint32_t CCR2;
+	volatile uint32_t CCR3;
+	volatile uint32_t CCR4;
+	volatile uint32_t BDTR;
+	volatile uint32_t DCR;
+	volatile uint32_t DMAR;
+	volatile uint32_t OR;
+}TIM_RegDef_t;
+
+
+
+
+
+
+
+
 #define 	GPIOA					((GPIO_RegDef_t*)GPIOA_BASEADDR)
 #define 	GPIOB					((GPIO_RegDef_t*)GPIOB_BASEADDR)
 #define 	GPIOC					((GPIO_RegDef_t*)GPIOC_BASEADDR)
@@ -195,6 +226,18 @@ typedef struct{
 #define 	SYSCFG					((SYSCFG_RegDef_t *) SYSCFG_BASEADDR)
 #define 	RNG 					((RNG_RegDef_t *) RNG_BASEADDR)
 
+#define		TIMER1					((TIM_RegDef_t *) TIM1_BASEADDR)
+#define		TIMER2					((TIM_RegDef_t *) TIM2_BASEADDR)
+#define		TIMER3					((TIM_RegDef_t *) TIM3_BASEADDR)
+#define		TIMER4					((TIM_RegDef_t *) TIM4_BASEADDR)
+#define		TIMER5					((TIM_RegDef_t *) TIM5_BASEADDR)
+#define		TIMER6					((TIM_RegDef_t *) TIM6_BASEADDR)
+#define		TIMER7					((TIM_RegDef_t *) TIM7_BASEADDR)
+#define		TIMER8					((TIM_RegDef_t *) TIM8_BASEADDR)
+#define		TIMER9					((TIM_RegDef_t *) TIM9_BASEADDR)
+#define		TIMER10					((TIM_RegDef_t *) TIM10_BASEADDR)
+#define		TIMER11					((TIM_RegDef_t *) TIM11_BASEADDR)
+//daha fazla varsa tanımla timerları
 
 #define GPIOA_CLOCK_ENABLE()		(RCC->AHB1ENR |=(1<<0))
 #define GPIOB_CLOCK_ENABLE()		(RCC->AHB1ENR |=(1<<1))
@@ -208,6 +251,21 @@ typedef struct{
 
 #define SYSCFG_CLOCK_ENABLE()		(RCC->APB2ENR |=(1<<14))
 #define RNG_CLOCK_ENABLE()			(RCC->AHB2ENR |=(1<<6))
+
+//APB2 Bus timer's clock
+#define TIMER1_CLOCK_ENABLE()		(RCC->APB2ENR |=(1<<0))
+#define TIMER8_CLOCK_ENABLE()		(RCC->APB2ENR |=(1<<1))
+#define TIMER9_CLOCK_ENABLE()		(RCC->APB2ENR |=(1<<16))
+#define TIMER10_CLOCK_ENABLE()		(RCC->APB2ENR |=(1<<17))
+#define TIMER11_CLOCK_ENABLE()		(RCC->APB2ENR |=(1<<18))
+
+//APB1 Bus timer's clock
+#define TIMER2_CLOCK_ENABLE()		(RCC->APB1ENR |=(1<<0))
+#define TIMER3_CLOCK_ENABLE()		(RCC->APB1ENR |=(1<<1))
+#define TIMER4_CLOCK_ENABLE()		(RCC->APB1ENR |=(1<<2))
+#define TIMER5_CLOCK_ENABLE()		(RCC->APB1ENR |=(1<<3))
+#define TIMER6_CLOCK_ENABLE()		(RCC->APB1ENR |=(1<<4))
+#define TIMER7_CLOCK_ENABLE()		(RCC->APB1ENR |=(1<<5))
 
 
 

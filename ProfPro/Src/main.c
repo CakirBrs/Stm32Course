@@ -22,6 +22,7 @@
 #include "utility.h"
 #include "rng.h"
 #include "coreM4.h"
+#include "timer.h"
 /*
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
@@ -109,11 +110,28 @@ int main(void)
 
 	systick_config(SYSTEM_FREQ/1000); //1ms de bi systic kesme
 
+
+	//lcd_init();
+	//lcd_print_char('a');
+	//lcd_print_string("baris");
+
+	gpio_writeto_output_pin(GPIOD, GPIO_PIN_NO_14, GPIO_PIN_SET);
+	timer_init(TIMER_6,15999,15999,0);
     while(1)
     {
     	//delay();
     	//toggle_board_random_leds();
     	task_led();
+    	int a=0;
+    	int b=0;
+    	int n=0;
+    	int m=0;
+    	//timer_reset(TIMER_6);
+    	timer_start(TIMER_6, TIMER_STOP);
+    	m++;
+    	b++;
+    	n++;
+    	timer_start(TIMER_6, TIMER_START);
 
     }
 }
