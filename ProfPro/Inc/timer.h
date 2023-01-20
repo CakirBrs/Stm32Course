@@ -9,7 +9,7 @@
 #define TIMER_H_
 
 #include "stm32f407xx.h"
-
+#include "gpio.h"
 
 typedef enum TIMNO{
 	TIMER_1,

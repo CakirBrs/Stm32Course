@@ -6,3 +6,7 @@ ProfPro/Debug/ProfPro.list
 ProfPro/.settings/language.settings.xml
 *.o
 *.su
+*.su
+*.o
+*.d
+*.elf

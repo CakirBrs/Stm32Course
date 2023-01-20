@@ -45,6 +45,9 @@ void timer_init(TIMNO e_timer_no, unsigned prescaler, unsigned period, unsigned 
 	p->ARR=period-1;
 	p->PSC=prescaler-1;
 
+	//if kontrolü yapıp advance timer ise kullan
+	//p->RCR = repeat-1;
+
 	//p->CNT=0;
 	timer_reset(e_timer_no);
 	p->CR1 |= (1U<<0); //timer enable
@@ -75,6 +78,7 @@ void timer_interrupt_config(TIMNO e_timer_no){
 void TIM6_DAC_IRQHandler(){
 	static int a =0;
 	++a;
+	gpio_toggleto_output_pin(GPIOD, GPIO_PIN_NO_14);
 	//TIMER6->SR &= ~(1U<<0);
 	Clear_IT_PendingBit(); //makro
 
