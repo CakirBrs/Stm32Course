@@ -96,7 +96,7 @@
 #define IRQ_EXTI15_10			40
 
 #define IRQ_HASH_RNG			80
-
+#define IRQ_TIM6_DAC			54
 
 
 

@@ -36,8 +36,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Src/coreM4.o
  .data          0x0000000000000000        0x0 ./Src/coreM4.o
  .bss           0x0000000000000000        0x0 ./Src/coreM4.o
- .text.nvic_irqno_enable
-                0x0000000000000000       0x70 ./Src/coreM4.o
  .group         0x0000000000000000        0xc ./Src/gpio.o
  .group         0x0000000000000000        0xc ./Src/gpio.o
  .group         0x0000000000000000        0xc ./Src/gpio.o
@@ -107,12 +105,12 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x103 ./Src/lcd.o
  .debug_macro   0x0000000000000000       0x6a ./Src/lcd.o
  .debug_macro   0x0000000000000000      0x1df ./Src/lcd.o
- .debug_macro   0x0000000000000000      0x2fc ./Src/lcd.o
+ .debug_macro   0x0000000000000000      0x302 ./Src/lcd.o
  .debug_macro   0x0000000000000000       0x34 ./Src/lcd.o
  .debug_macro   0x0000000000000000       0x2e ./Src/lcd.o
  .debug_macro   0x0000000000000000       0x22 ./Src/lcd.o
  .debug_line    0x0000000000000000      0x4fb ./Src/lcd.o
- .debug_str     0x0000000000000000     0x5631 ./Src/lcd.o
+ .debug_str     0x0000000000000000     0x5641 ./Src/lcd.o
  .comment       0x0000000000000000       0x51 ./Src/lcd.o
  .debug_frame   0x0000000000000000      0x154 ./Src/lcd.o
  .ARM.attributes
@@ -141,7 +139,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x103 ./Src/main.o
  .debug_macro   0x0000000000000000       0x6a ./Src/main.o
  .debug_macro   0x0000000000000000      0x1df ./Src/main.o
- .debug_macro   0x0000000000000000      0x302 ./Src/main.o
+ .debug_macro   0x0000000000000000      0x308 ./Src/main.o
  .debug_macro   0x0000000000000000       0x34 ./Src/main.o
  .debug_macro   0x0000000000000000       0x2e ./Src/main.o
  .group         0x0000000000000000        0xc ./Src/rng.o
@@ -168,7 +166,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x103 ./Src/rng.o
  .debug_macro   0x0000000000000000       0x6a ./Src/rng.o
  .debug_macro   0x0000000000000000      0x1df ./Src/rng.o
- .debug_macro   0x0000000000000000      0x302 ./Src/rng.o
+ .debug_macro   0x0000000000000000      0x308 ./Src/rng.o
  .debug_macro   0x0000000000000000       0x34 ./Src/rng.o
  .group         0x0000000000000000        0xc ./Src/syscalls.o
  .group         0x0000000000000000        0xc ./Src/syscalls.o
@@ -374,8 +372,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Src/timer.o
  .data          0x0000000000000000        0x0 ./Src/timer.o
  .bss           0x0000000000000000        0x0 ./Src/timer.o
- .text.timer_reset
-                0x0000000000000000       0x2c ./Src/timer.o
  .debug_macro   0x0000000000000000      0xa7e ./Src/timer.o
  .debug_macro   0x0000000000000000       0x22 ./Src/timer.o
  .debug_macro   0x0000000000000000       0x8e ./Src/timer.o
@@ -383,7 +379,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x103 ./Src/timer.o
  .debug_macro   0x0000000000000000       0x6a ./Src/timer.o
  .debug_macro   0x0000000000000000      0x1df ./Src/timer.o
- .debug_macro   0x0000000000000000      0x2fc ./Src/timer.o
+ .debug_macro   0x0000000000000000      0x302 ./Src/timer.o
  .group         0x0000000000000000        0xc ./Src/utility.o
  .text          0x0000000000000000        0x0 ./Src/utility.o
  .data          0x0000000000000000        0x0 ./Src/utility.o
@@ -493,233 +489,244 @@ LOAD c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
                 0x0000000008000000                g_pfnVectors
                 0x00000000080001a8                . = ALIGN (0x4)
 
-.text           0x00000000080001a8      0xac8
+.text           0x00000000080001a8      0xbc8
                 0x00000000080001a8                . = ALIGN (0x4)
  *(.text)
  .text          0x00000000080001a8       0x40 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.text*)
- .text.nvic_irqno_disable
+ .text.nvic_irqno_enable
                 0x00000000080001e8       0x70 ./Src/coreM4.o
-                0x00000000080001e8                nvic_irqno_disable
+                0x00000000080001e8                nvic_irqno_enable
+ .text.nvic_irqno_disable
+                0x0000000008000258       0x70 ./Src/coreM4.o
+                0x0000000008000258                nvic_irqno_disable
  .text.systick_config
-                0x0000000008000258       0x4c ./Src/coreM4.o
-                0x0000000008000258                systick_config
+                0x00000000080002c8       0x4c ./Src/coreM4.o
+                0x00000000080002c8                systick_config
  .text.SysTick_Handler
-                0x00000000080002a4       0x1c ./Src/coreM4.o
-                0x00000000080002a4                SysTick_Handler
- .text.clock    0x00000000080002c0       0x18 ./Src/coreM4.o
-                0x00000000080002c0                clock
+                0x0000000008000314       0x1c ./Src/coreM4.o
+                0x0000000008000314                SysTick_Handler
+ .text.clock    0x0000000008000330       0x18 ./Src/coreM4.o
+                0x0000000008000330                clock
  .text.gpio_perip_en
-                0x00000000080002d8      0x100 ./Src/gpio.o
+                0x0000000008000348      0x100 ./Src/gpio.o
  .text.get_port_code
-                0x00000000080003d8       0xa4 ./Src/gpio.o
+                0x0000000008000448       0xa4 ./Src/gpio.o
  .text.gpio_init
-                0x000000000800047c      0x22c ./Src/gpio.o
-                0x000000000800047c                gpio_init
+                0x00000000080004ec      0x22c ./Src/gpio.o
+                0x00000000080004ec                gpio_init
  .text.gpio_writeto_output_pin
-                0x00000000080006a8       0x4a ./Src/gpio.o
-                0x00000000080006a8                gpio_writeto_output_pin
+                0x0000000008000718       0x4a ./Src/gpio.o
+                0x0000000008000718                gpio_writeto_output_pin
  .text.gpio_toggleto_output_pin
-                0x00000000080006f2       0x2a ./Src/gpio.o
-                0x00000000080006f2                gpio_toggleto_output_pin
+                0x0000000008000762       0x2a ./Src/gpio.o
+                0x0000000008000762                gpio_toggleto_output_pin
  .text.clear_pending_reg
-                0x000000000800071c       0x40 ./Src/gpio.o
-                0x000000000800071c                clear_pending_reg
+                0x000000000800078c       0x40 ./Src/gpio.o
+                0x000000000800078c                clear_pending_reg
  .text.EXTI0_IRQHandler
-                0x000000000800075c       0x20 ./Src/main.o
-                0x000000000800075c                EXTI0_IRQHandler
+                0x00000000080007cc       0x20 ./Src/main.o
+                0x00000000080007cc                EXTI0_IRQHandler
  .text.task_led
-                0x000000000800077c       0x8c ./Src/main.o
-                0x000000000800077c                task_led
- .text.main     0x0000000008000808      0x100 ./Src/main.o
-                0x0000000008000808                main
+                0x00000000080007ec       0x8c ./Src/main.o
+                0x00000000080007ec                task_led
+ .text.main     0x0000000008000878      0x104 ./Src/main.o
+                0x0000000008000878                main
  .text.HASH_RNG_IRQHandler
-                0x0000000008000908       0xb0 ./Src/rng.o
-                0x0000000008000908                HASH_RNG_IRQHandler
+                0x000000000800097c       0xb0 ./Src/rng.o
+                0x000000000800097c                HASH_RNG_IRQHandler
  .text.timer_clock_enable
-                0x00000000080009b8      0x134 ./Src/timer.o
+                0x0000000008000a2c      0x134 ./Src/timer.o
  .text.timer_init
-                0x0000000008000aec       0x58 ./Src/timer.o
-                0x0000000008000aec                timer_init
+                0x0000000008000b60       0x58 ./Src/timer.o
+                0x0000000008000b60                timer_init
+ .text.timer_reset
+                0x0000000008000bb8       0x2c ./Src/timer.o
+                0x0000000008000bb8                timer_reset
  .text.timer_start
-                0x0000000008000b44       0x4c ./Src/timer.o
-                0x0000000008000b44                timer_start
+                0x0000000008000be4       0x4c ./Src/timer.o
+                0x0000000008000be4                timer_start
+ .text.timer_interrupt_config
+                0x0000000008000c30       0x34 ./Src/timer.o
+                0x0000000008000c30                timer_interrupt_config
+ .text.TIM6_DAC_IRQHandler
+                0x0000000008000c64       0x2c ./Src/timer.o
+                0x0000000008000c64                TIM6_DAC_IRQHandler
  .text.mini_delay
-                0x0000000008000b90       0x2c ./Src/utility.o
-                0x0000000008000b90                mini_delay
+                0x0000000008000c90       0x2c ./Src/utility.o
+                0x0000000008000c90                mini_delay
  .text.Reset_Handler
-                0x0000000008000bbc       0x50 ./Startup/startup_stm32f407vgtx.o
-                0x0000000008000bbc                Reset_Handler
+                0x0000000008000cbc       0x50 ./Startup/startup_stm32f407vgtx.o
+                0x0000000008000cbc                Reset_Handler
  .text.Default_Handler
-                0x0000000008000c0c        0x2 ./Startup/startup_stm32f407vgtx.o
-                0x0000000008000c0c                RTC_Alarm_IRQHandler
-                0x0000000008000c0c                EXTI2_IRQHandler
-                0x0000000008000c0c                TIM8_CC_IRQHandler
-                0x0000000008000c0c                DebugMon_Handler
-                0x0000000008000c0c                TIM1_CC_IRQHandler
-                0x0000000008000c0c                DMA2_Stream5_IRQHandler
-                0x0000000008000c0c                HardFault_Handler
-                0x0000000008000c0c                DMA1_Stream5_IRQHandler
-                0x0000000008000c0c                PVD_IRQHandler
-                0x0000000008000c0c                SDIO_IRQHandler
-                0x0000000008000c0c                TAMP_STAMP_IRQHandler
-                0x0000000008000c0c                PendSV_Handler
-                0x0000000008000c0c                NMI_Handler
-                0x0000000008000c0c                CAN2_RX1_IRQHandler
-                0x0000000008000c0c                EXTI3_IRQHandler
-                0x0000000008000c0c                TIM8_TRG_COM_TIM14_IRQHandler
-                0x0000000008000c0c                TIM1_UP_TIM10_IRQHandler
-                0x0000000008000c0c                TIM8_UP_TIM13_IRQHandler
-                0x0000000008000c0c                I2C3_ER_IRQHandler
-                0x0000000008000c0c                LCD_TFT_IRQHandler
-                0x0000000008000c0c                I2C2_EV_IRQHandler
-                0x0000000008000c0c                DMA1_Stream2_IRQHandler
-                0x0000000008000c0c                CAN1_RX0_IRQHandler
-                0x0000000008000c0c                FPU_IRQHandler
-                0x0000000008000c0c                OTG_HS_WKUP_IRQHandler
-                0x0000000008000c0c                UsageFault_Handler
-                0x0000000008000c0c                CAN2_SCE_IRQHandler
-                0x0000000008000c0c                DMA2_Stream2_IRQHandler
-                0x0000000008000c0c                SPI1_IRQHandler
-                0x0000000008000c0c                TIM6_DAC_IRQHandler
-                0x0000000008000c0c                TIM1_BRK_TIM9_IRQHandler
-                0x0000000008000c0c                DCMI_IRQHandler
-                0x0000000008000c0c                CAN2_RX0_IRQHandler
-                0x0000000008000c0c                DMA2_Stream3_IRQHandler
-                0x0000000008000c0c                USART6_IRQHandler
-                0x0000000008000c0c                USART3_IRQHandler
-                0x0000000008000c0c                CRYP_IRQHandler
-                0x0000000008000c0c                CAN1_RX1_IRQHandler
-                0x0000000008000c0c                UART5_IRQHandler
-                0x0000000008000c0c                DMA2_Stream0_IRQHandler
-                0x0000000008000c0c                TIM4_IRQHandler
-                0x0000000008000c0c                I2C1_EV_IRQHandler
-                0x0000000008000c0c                DMA1_Stream6_IRQHandler
-                0x0000000008000c0c                DMA1_Stream1_IRQHandler
-                0x0000000008000c0c                UART4_IRQHandler
-                0x0000000008000c0c                LCD_TFT_1_IRQHandler
-                0x0000000008000c0c                TIM3_IRQHandler
-                0x0000000008000c0c                RCC_IRQHandler
-                0x0000000008000c0c                TIM8_BRK_TIM12_IRQHandler
-                0x0000000008000c0c                Default_Handler
-                0x0000000008000c0c                EXTI15_10_IRQHandler
-                0x0000000008000c0c                ADC_IRQHandler
-                0x0000000008000c0c                DMA1_Stream7_IRQHandler
-                0x0000000008000c0c                TIM7_IRQHandler
-                0x0000000008000c0c                CAN2_TX_IRQHandler
-                0x0000000008000c0c                TIM5_IRQHandler
-                0x0000000008000c0c                DMA2_Stream7_IRQHandler
-                0x0000000008000c0c                I2C3_EV_IRQHandler
-                0x0000000008000c0c                EXTI9_5_IRQHandler
-                0x0000000008000c0c                RTC_WKUP_IRQHandler
-                0x0000000008000c0c                ETH_WKUP_IRQHandler
-                0x0000000008000c0c                SPI2_IRQHandler
-                0x0000000008000c0c                OTG_HS_EP1_IN_IRQHandler
-                0x0000000008000c0c                MemManage_Handler
-                0x0000000008000c0c                DMA1_Stream0_IRQHandler
-                0x0000000008000c0c                CAN1_TX_IRQHandler
-                0x0000000008000c0c                SVC_Handler
-                0x0000000008000c0c                EXTI4_IRQHandler
-                0x0000000008000c0c                FSMC_IRQHandler
-                0x0000000008000c0c                ETH_IRQHandler
-                0x0000000008000c0c                OTG_HS_EP1_OUT_IRQHandler
-                0x0000000008000c0c                WWDG_IRQHandler
-                0x0000000008000c0c                TIM2_IRQHandler
-                0x0000000008000c0c                OTG_FS_WKUP_IRQHandler
-                0x0000000008000c0c                TIM1_TRG_COM_TIM11_IRQHandler
-                0x0000000008000c0c                OTG_HS_IRQHandler
-                0x0000000008000c0c                EXTI1_IRQHandler
-                0x0000000008000c0c                USART2_IRQHandler
-                0x0000000008000c0c                I2C2_ER_IRQHandler
-                0x0000000008000c0c                DMA2_Stream1_IRQHandler
-                0x0000000008000c0c                CAN1_SCE_IRQHandler
-                0x0000000008000c0c                DMA2_Stream4_IRQHandler
-                0x0000000008000c0c                BusFault_Handler
-                0x0000000008000c0c                USART1_IRQHandler
-                0x0000000008000c0c                OTG_FS_IRQHandler
-                0x0000000008000c0c                SPI3_IRQHandler
-                0x0000000008000c0c                DMA1_Stream4_IRQHandler
-                0x0000000008000c0c                I2C1_ER_IRQHandler
-                0x0000000008000c0c                DMA2_Stream6_IRQHandler
-                0x0000000008000c0c                DMA1_Stream3_IRQHandler
- *fill*         0x0000000008000c0e        0x2 
+                0x0000000008000d0c        0x2 ./Startup/startup_stm32f407vgtx.o
+                0x0000000008000d0c                RTC_Alarm_IRQHandler
+                0x0000000008000d0c                EXTI2_IRQHandler
+                0x0000000008000d0c                TIM8_CC_IRQHandler
+                0x0000000008000d0c                DebugMon_Handler
+                0x0000000008000d0c                TIM1_CC_IRQHandler
+                0x0000000008000d0c                DMA2_Stream5_IRQHandler
+                0x0000000008000d0c                HardFault_Handler
+                0x0000000008000d0c                DMA1_Stream5_IRQHandler
+                0x0000000008000d0c                PVD_IRQHandler
+                0x0000000008000d0c                SDIO_IRQHandler
+                0x0000000008000d0c                TAMP_STAMP_IRQHandler
+                0x0000000008000d0c                PendSV_Handler
+                0x0000000008000d0c                NMI_Handler
+                0x0000000008000d0c                CAN2_RX1_IRQHandler
+                0x0000000008000d0c                EXTI3_IRQHandler
+                0x0000000008000d0c                TIM8_TRG_COM_TIM14_IRQHandler
+                0x0000000008000d0c                TIM1_UP_TIM10_IRQHandler
+                0x0000000008000d0c                TIM8_UP_TIM13_IRQHandler
+                0x0000000008000d0c                I2C3_ER_IRQHandler
+                0x0000000008000d0c                LCD_TFT_IRQHandler
+                0x0000000008000d0c                I2C2_EV_IRQHandler
+                0x0000000008000d0c                DMA1_Stream2_IRQHandler
+                0x0000000008000d0c                CAN1_RX0_IRQHandler
+                0x0000000008000d0c                FPU_IRQHandler
+                0x0000000008000d0c                OTG_HS_WKUP_IRQHandler
+                0x0000000008000d0c                UsageFault_Handler
+                0x0000000008000d0c                CAN2_SCE_IRQHandler
+                0x0000000008000d0c                DMA2_Stream2_IRQHandler
+                0x0000000008000d0c                SPI1_IRQHandler
+                0x0000000008000d0c                TIM1_BRK_TIM9_IRQHandler
+                0x0000000008000d0c                DCMI_IRQHandler
+                0x0000000008000d0c                CAN2_RX0_IRQHandler
+                0x0000000008000d0c                DMA2_Stream3_IRQHandler
+                0x0000000008000d0c                USART6_IRQHandler
+                0x0000000008000d0c                USART3_IRQHandler
+                0x0000000008000d0c                CRYP_IRQHandler
+                0x0000000008000d0c                CAN1_RX1_IRQHandler
+                0x0000000008000d0c                UART5_IRQHandler
+                0x0000000008000d0c                DMA2_Stream0_IRQHandler
+                0x0000000008000d0c                TIM4_IRQHandler
+                0x0000000008000d0c                I2C1_EV_IRQHandler
+                0x0000000008000d0c                DMA1_Stream6_IRQHandler
+                0x0000000008000d0c                DMA1_Stream1_IRQHandler
+                0x0000000008000d0c                UART4_IRQHandler
+                0x0000000008000d0c                LCD_TFT_1_IRQHandler
+                0x0000000008000d0c                TIM3_IRQHandler
+                0x0000000008000d0c                RCC_IRQHandler
+                0x0000000008000d0c                TIM8_BRK_TIM12_IRQHandler
+                0x0000000008000d0c                Default_Handler
+                0x0000000008000d0c                EXTI15_10_IRQHandler
+                0x0000000008000d0c                ADC_IRQHandler
+                0x0000000008000d0c                DMA1_Stream7_IRQHandler
+                0x0000000008000d0c                TIM7_IRQHandler
+                0x0000000008000d0c                CAN2_TX_IRQHandler
+                0x0000000008000d0c                TIM5_IRQHandler
+                0x0000000008000d0c                DMA2_Stream7_IRQHandler
+                0x0000000008000d0c                I2C3_EV_IRQHandler
+                0x0000000008000d0c                EXTI9_5_IRQHandler
+                0x0000000008000d0c                RTC_WKUP_IRQHandler
+                0x0000000008000d0c                ETH_WKUP_IRQHandler
+                0x0000000008000d0c                SPI2_IRQHandler
+                0x0000000008000d0c                OTG_HS_EP1_IN_IRQHandler
+                0x0000000008000d0c                MemManage_Handler
+                0x0000000008000d0c                DMA1_Stream0_IRQHandler
+                0x0000000008000d0c                CAN1_TX_IRQHandler
+                0x0000000008000d0c                SVC_Handler
+                0x0000000008000d0c                EXTI4_IRQHandler
+                0x0000000008000d0c                FSMC_IRQHandler
+                0x0000000008000d0c                ETH_IRQHandler
+                0x0000000008000d0c                OTG_HS_EP1_OUT_IRQHandler
+                0x0000000008000d0c                WWDG_IRQHandler
+                0x0000000008000d0c                TIM2_IRQHandler
+                0x0000000008000d0c                OTG_FS_WKUP_IRQHandler
+                0x0000000008000d0c                TIM1_TRG_COM_TIM11_IRQHandler
+                0x0000000008000d0c                OTG_HS_IRQHandler
+                0x0000000008000d0c                EXTI1_IRQHandler
+                0x0000000008000d0c                USART2_IRQHandler
+                0x0000000008000d0c                I2C2_ER_IRQHandler
+                0x0000000008000d0c                DMA2_Stream1_IRQHandler
+                0x0000000008000d0c                CAN1_SCE_IRQHandler
+                0x0000000008000d0c                DMA2_Stream4_IRQHandler
+                0x0000000008000d0c                BusFault_Handler
+                0x0000000008000d0c                USART1_IRQHandler
+                0x0000000008000d0c                OTG_FS_IRQHandler
+                0x0000000008000d0c                SPI3_IRQHandler
+                0x0000000008000d0c                DMA1_Stream4_IRQHandler
+                0x0000000008000d0c                I2C1_ER_IRQHandler
+                0x0000000008000d0c                DMA2_Stream6_IRQHandler
+                0x0000000008000d0c                DMA1_Stream3_IRQHandler
+ *fill*         0x0000000008000d0e        0x2 
  .text.__libc_init_array
-                0x0000000008000c10       0x48 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-init.o)
-                0x0000000008000c10                __libc_init_array
+                0x0000000008000d10       0x48 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-init.o)
+                0x0000000008000d10                __libc_init_array
  *(.glue_7)
- .glue_7        0x0000000008000c58        0x0 linker stubs
+ .glue_7        0x0000000008000d58        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0000000008000c58        0x0 linker stubs
+ .glue_7t       0x0000000008000d58        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0000000008000c58        0x0 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x0000000008000d58        0x0 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x0000000008000c58        0x4 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0000000008000c58                _init
- .init          0x0000000008000c5c        0x8 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x0000000008000d58        0x4 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0000000008000d58                _init
+ .init          0x0000000008000d5c        0x8 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x0000000008000c64        0x4 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0000000008000c64                _fini
- .fini          0x0000000008000c68        0x8 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x0000000008000c70                . = ALIGN (0x4)
-                0x0000000008000c70                _etext = .
+ .fini          0x0000000008000d64        0x4 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0000000008000d64                _fini
+ .fini          0x0000000008000d68        0x8 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x0000000008000d70                . = ALIGN (0x4)
+                0x0000000008000d70                _etext = .
 
-.vfp11_veneer   0x0000000008000c70        0x0
- .vfp11_veneer  0x0000000008000c70        0x0 linker stubs
+.vfp11_veneer   0x0000000008000d70        0x0
+ .vfp11_veneer  0x0000000008000d70        0x0 linker stubs
 
-.v4_bx          0x0000000008000c70        0x0
- .v4_bx         0x0000000008000c70        0x0 linker stubs
+.v4_bx          0x0000000008000d70        0x0
+ .v4_bx         0x0000000008000d70        0x0 linker stubs
 
-.iplt           0x0000000008000c70        0x0
- .iplt          0x0000000008000c70        0x0 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x0000000008000d70        0x0
+ .iplt          0x0000000008000d70        0x0 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rel.dyn        0x0000000008000c70        0x0
- .rel.iplt      0x0000000008000c70        0x0 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x0000000008000d70        0x0
+ .rel.iplt      0x0000000008000d70        0x0 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x0000000008000c70        0x0
-                0x0000000008000c70                . = ALIGN (0x4)
+.rodata         0x0000000008000d70        0x0
+                0x0000000008000d70                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
-                0x0000000008000c70                . = ALIGN (0x4)
+                0x0000000008000d70                . = ALIGN (0x4)
 
-.ARM.extab      0x0000000008000c70        0x0
-                0x0000000008000c70                . = ALIGN (0x4)
+.ARM.extab      0x0000000008000d70        0x0
+                0x0000000008000d70                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000000008000c70                . = ALIGN (0x4)
+                0x0000000008000d70                . = ALIGN (0x4)
 
-.ARM            0x0000000008000c70        0x0
-                0x0000000008000c70                . = ALIGN (0x4)
-                0x0000000008000c70                __exidx_start = .
+.ARM            0x0000000008000d70        0x0
+                0x0000000008000d70                . = ALIGN (0x4)
+                0x0000000008000d70                __exidx_start = .
  *(.ARM.exidx*)
-                0x0000000008000c70                __exidx_end = .
-                0x0000000008000c70                . = ALIGN (0x4)
+                0x0000000008000d70                __exidx_end = .
+                0x0000000008000d70                . = ALIGN (0x4)
 
-.preinit_array  0x0000000008000c70        0x0
-                0x0000000008000c70                . = ALIGN (0x4)
-                0x0000000008000c70                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0000000008000d70        0x0
+                0x0000000008000d70                . = ALIGN (0x4)
+                0x0000000008000d70                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0000000008000c70                PROVIDE (__preinit_array_end = .)
-                0x0000000008000c70                . = ALIGN (0x4)
+                0x0000000008000d70                PROVIDE (__preinit_array_end = .)
+                0x0000000008000d70                . = ALIGN (0x4)
 
-.init_array     0x0000000008000c70        0x4
-                0x0000000008000c70                . = ALIGN (0x4)
-                0x0000000008000c70                PROVIDE (__init_array_start = .)
+.init_array     0x0000000008000d70        0x4
+                0x0000000008000d70                . = ALIGN (0x4)
+                0x0000000008000d70                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0000000008000c70        0x4 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x0000000008000c74                PROVIDE (__init_array_end = .)
-                0x0000000008000c74                . = ALIGN (0x4)
+ .init_array    0x0000000008000d70        0x4 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0000000008000d74                PROVIDE (__init_array_end = .)
+                0x0000000008000d74                . = ALIGN (0x4)
 
-.fini_array     0x0000000008000c74        0x4
-                0x0000000008000c74                . = ALIGN (0x4)
+.fini_array     0x0000000008000d74        0x4
+                0x0000000008000d74                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008000c74        0x4 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x0000000008000d74        0x4 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0000000008000c78                . = ALIGN (0x4)
-                0x0000000008000c78                _sidata = LOADADDR (.data)
+                0x0000000008000d78                . = ALIGN (0x4)
+                0x0000000008000d78                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000       0x20 load address 0x0000000008000c78
+.data           0x0000000020000000       0x20 load address 0x0000000008000d78
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -730,12 +737,12 @@ LOAD c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  *(.RamFunc*)
                 0x0000000020000020                . = ALIGN (0x4)
                 0x0000000020000020                _edata = .
-                0x0000000008000c98                _siccmram = LOADADDR (.ccmram)
+                0x0000000008000d98                _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x0000000020000020        0x0 load address 0x0000000008000c98
+.igot.plt       0x0000000020000020        0x0 load address 0x0000000008000d98
  .igot.plt      0x0000000020000020        0x0 c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ccmram         0x0000000010000000        0x0 load address 0x0000000008000c98
+.ccmram         0x0000000010000000        0x0 load address 0x0000000008000d98
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _sccmram = .
  *(.ccmram)
@@ -744,7 +751,7 @@ LOAD c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
                 0x0000000010000000                _eccmram = .
                 0x0000000010000000                . = ALIGN (0x4)
 
-.bss            0x0000000020000020       0x2c
+.bss            0x0000000020000020       0x30
                 0x0000000020000020                _sbss = .
                 0x0000000020000020                __bss_start__ = _sbss
  *(.bss)
@@ -756,15 +763,15 @@ LOAD c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .bss.state.1   0x0000000020000044        0x1 ./Src/main.o
  *fill*         0x0000000020000045        0x3 
  .bss.t0.0      0x0000000020000048        0x4 ./Src/main.o
+ .bss.a.0       0x000000002000004c        0x4 ./Src/timer.o
  *(COMMON)
-                0x000000002000004c                . = ALIGN (0x4)
-                0x000000002000004c                _ebss = .
-                0x000000002000004c                __bss_end__ = _ebss
+                0x0000000020000050                . = ALIGN (0x4)
+                0x0000000020000050                _ebss = .
+                0x0000000020000050                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x000000002000004c      0x604
+                0x0000000020000050      0x600
                 0x0000000020000050                . = ALIGN (0x8)
- *fill*         0x000000002000004c        0x4 
                 [!provide]                        PROVIDE (end = .)
                 0x0000000020000050                PROVIDE (_end = .)
                 0x0000000020000250                . = (. + _Min_Heap_Size)
@@ -809,25 +816,25 @@ LOAD c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
 LOAD c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_info     0x0000000000000000     0x17e8
+.debug_info     0x0000000000000000     0x1876
  .debug_info    0x0000000000000000      0x2a4 ./Src/coreM4.o
  .debug_info    0x00000000000002a4      0x74f ./Src/gpio.o
- .debug_info    0x00000000000009f3      0x547 ./Src/main.o
- .debug_info    0x0000000000000f3a      0x31a ./Src/rng.o
- .debug_info    0x0000000000001254      0x4e9 ./Src/timer.o
- .debug_info    0x000000000000173d       0x89 ./Src/utility.o
- .debug_info    0x00000000000017c6       0x22 ./Startup/startup_stm32f407vgtx.o
+ .debug_info    0x00000000000009f3      0x559 ./Src/main.o
+ .debug_info    0x0000000000000f4c      0x31a ./Src/rng.o
+ .debug_info    0x0000000000001266      0x565 ./Src/timer.o
+ .debug_info    0x00000000000017cb       0x89 ./Src/utility.o
+ .debug_info    0x0000000000001854       0x22 ./Startup/startup_stm32f407vgtx.o
 
-.debug_abbrev   0x0000000000000000      0x6f8
+.debug_abbrev   0x0000000000000000      0x750
  .debug_abbrev  0x0000000000000000       0xed ./Src/coreM4.o
  .debug_abbrev  0x00000000000000ed      0x1d0 ./Src/gpio.o
  .debug_abbrev  0x00000000000002bd      0x199 ./Src/main.o
  .debug_abbrev  0x0000000000000456       0xee ./Src/rng.o
- .debug_abbrev  0x0000000000000544      0x134 ./Src/timer.o
- .debug_abbrev  0x0000000000000678       0x6e ./Src/utility.o
- .debug_abbrev  0x00000000000006e6       0x12 ./Startup/startup_stm32f407vgtx.o
+ .debug_abbrev  0x0000000000000544      0x18c ./Src/timer.o
+ .debug_abbrev  0x00000000000006d0       0x6e ./Src/utility.o
+ .debug_abbrev  0x000000000000073e       0x12 ./Startup/startup_stm32f407vgtx.o
 
-.debug_aranges  0x0000000000000000      0x188
+.debug_aranges  0x0000000000000000      0x198
  .debug_aranges
                 0x0000000000000000       0x40 ./Src/coreM4.o
  .debug_aranges
@@ -837,22 +844,22 @@ LOAD c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_aranges
                 0x00000000000000d0       0x30 ./Src/rng.o
  .debug_aranges
-                0x0000000000000100       0x38 ./Src/timer.o
+                0x0000000000000100       0x48 ./Src/timer.o
  .debug_aranges
-                0x0000000000000138       0x28 ./Src/utility.o
+                0x0000000000000148       0x28 ./Src/utility.o
  .debug_aranges
-                0x0000000000000160       0x28 ./Startup/startup_stm32f407vgtx.o
+                0x0000000000000170       0x28 ./Startup/startup_stm32f407vgtx.o
 
-.debug_ranges   0x0000000000000000      0x120
+.debug_ranges   0x0000000000000000      0x130
  .debug_ranges  0x0000000000000000       0x30 ./Src/coreM4.o
  .debug_ranges  0x0000000000000030       0x50 ./Src/gpio.o
  .debug_ranges  0x0000000000000080       0x20 ./Src/main.o
  .debug_ranges  0x00000000000000a0       0x20 ./Src/rng.o
- .debug_ranges  0x00000000000000c0       0x28 ./Src/timer.o
- .debug_ranges  0x00000000000000e8       0x18 ./Src/utility.o
- .debug_ranges  0x0000000000000100       0x20 ./Startup/startup_stm32f407vgtx.o
+ .debug_ranges  0x00000000000000c0       0x38 ./Src/timer.o
+ .debug_ranges  0x00000000000000f8       0x18 ./Src/utility.o
+ .debug_ranges  0x0000000000000110       0x20 ./Startup/startup_stm32f407vgtx.o
 
-.debug_macro    0x0000000000000000     0x15df
+.debug_macro    0x0000000000000000     0x15f1
  .debug_macro   0x0000000000000000       0x72 ./Src/coreM4.o
  .debug_macro   0x0000000000000072      0xa7e ./Src/coreM4.o
  .debug_macro   0x0000000000000af0       0x22 ./Src/coreM4.o
@@ -863,41 +870,41 @@ LOAD c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x0000000000000d5e      0x1df ./Src/coreM4.o
  .debug_macro   0x0000000000000f3d       0x2e ./Src/coreM4.o
  .debug_macro   0x0000000000000f6b       0x84 ./Src/gpio.o
- .debug_macro   0x0000000000000fef      0x302 ./Src/gpio.o
- .debug_macro   0x00000000000012f1       0x34 ./Src/gpio.o
- .debug_macro   0x0000000000001325       0x2e ./Src/gpio.o
- .debug_macro   0x0000000000001353       0xb4 ./Src/main.o
- .debug_macro   0x0000000000001407       0x4c ./Src/main.o
- .debug_macro   0x0000000000001453       0x16 ./Src/main.o
- .debug_macro   0x0000000000001469       0x84 ./Src/rng.o
- .debug_macro   0x00000000000014ed       0x46 ./Src/rng.o
- .debug_macro   0x0000000000001533       0x81 ./Src/timer.o
- .debug_macro   0x00000000000015b4       0x10 ./Src/timer.o
- .debug_macro   0x00000000000015c4       0x1b ./Src/utility.o
+ .debug_macro   0x0000000000000fef      0x308 ./Src/gpio.o
+ .debug_macro   0x00000000000012f7       0x34 ./Src/gpio.o
+ .debug_macro   0x000000000000132b       0x2e ./Src/gpio.o
+ .debug_macro   0x0000000000001359       0xb4 ./Src/main.o
+ .debug_macro   0x000000000000140d       0x4c ./Src/main.o
+ .debug_macro   0x0000000000001459       0x1c ./Src/main.o
+ .debug_macro   0x0000000000001475       0x84 ./Src/rng.o
+ .debug_macro   0x00000000000014f9       0x46 ./Src/rng.o
+ .debug_macro   0x000000000000153f       0x81 ./Src/timer.o
+ .debug_macro   0x00000000000015c0       0x16 ./Src/timer.o
+ .debug_macro   0x00000000000015d6       0x1b ./Src/utility.o
 
-.debug_line     0x0000000000000000     0x1931
+.debug_line     0x0000000000000000     0x196e
  .debug_line    0x0000000000000000      0x455 ./Src/coreM4.o
  .debug_line    0x0000000000000455      0x699 ./Src/gpio.o
- .debug_line    0x0000000000000aee      0x487 ./Src/main.o
- .debug_line    0x0000000000000f75      0x456 ./Src/rng.o
- .debug_line    0x00000000000013cb      0x44f ./Src/timer.o
- .debug_line    0x000000000000181a       0x93 ./Src/utility.o
- .debug_line    0x00000000000018ad       0x84 ./Startup/startup_stm32f407vgtx.o
+ .debug_line    0x0000000000000aee      0x488 ./Src/main.o
+ .debug_line    0x0000000000000f76      0x456 ./Src/rng.o
+ .debug_line    0x00000000000013cc      0x48b ./Src/timer.o
+ .debug_line    0x0000000000001857       0x93 ./Src/utility.o
+ .debug_line    0x00000000000018ea       0x84 ./Startup/startup_stm32f407vgtx.o
 
-.debug_str      0x0000000000000000     0x5bce
+.debug_str      0x0000000000000000     0x5c40
  .debug_str     0x0000000000000000     0x3d37 ./Src/coreM4.o
                                        0x3ea3 (size before relaxing)
- .debug_str     0x0000000000003d37     0x1a00 ./Src/gpio.o
-                                       0x5733 (size before relaxing)
- .debug_str     0x0000000000005737      0x362 ./Src/main.o
-                                       0x57e3 (size before relaxing)
- .debug_str     0x0000000000005a99       0x41 ./Src/rng.o
-                                       0x541b (size before relaxing)
- .debug_str     0x0000000000005ada       0xb2 ./Src/timer.o
-                                       0x52fc (size before relaxing)
- .debug_str     0x0000000000005b8c       0x11 ./Src/utility.o
+ .debug_str     0x0000000000003d37     0x1a10 ./Src/gpio.o
+                                       0x5743 (size before relaxing)
+ .debug_str     0x0000000000005747      0x3a9 ./Src/main.o
+                                       0x583a (size before relaxing)
+ .debug_str     0x0000000000005af0       0x41 ./Src/rng.o
+                                       0x542b (size before relaxing)
+ .debug_str     0x0000000000005b31       0xcd ./Src/timer.o
+                                       0x5380 (size before relaxing)
+ .debug_str     0x0000000000005bfe       0x11 ./Src/utility.o
                                        0x2cfd (size before relaxing)
- .debug_str     0x0000000000005b9d       0x31 ./Startup/startup_stm32f407vgtx.o
+ .debug_str     0x0000000000005c0f       0x31 ./Startup/startup_stm32f407vgtx.o
                                          0x75 (size before relaxing)
 
 .comment        0x0000000000000000       0x50
@@ -909,11 +916,11 @@ LOAD c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .comment       0x0000000000000050       0x51 ./Src/timer.o
  .comment       0x0000000000000050       0x51 ./Src/utility.o
 
-.debug_frame    0x0000000000000000      0x444
+.debug_frame    0x0000000000000000      0x488
  .debug_frame   0x0000000000000000       0xc8 ./Src/coreM4.o
  .debug_frame   0x00000000000000c8      0x174 ./Src/gpio.o
  .debug_frame   0x000000000000023c       0x68 ./Src/main.o
  .debug_frame   0x00000000000002a4       0x68 ./Src/rng.o
- .debug_frame   0x000000000000030c       0xac ./Src/timer.o
- .debug_frame   0x00000000000003b8       0x60 ./Src/utility.o
- .debug_frame   0x0000000000000418       0x2c c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x000000000000030c       0xf0 ./Src/timer.o
+ .debug_frame   0x00000000000003fc       0x60 ./Src/utility.o
+ .debug_frame   0x000000000000045c       0x2c c:/st/stm32cubeide_1.10.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-init.o)

@@ -45,7 +45,8 @@ void timer_init(TIMNO e_timer_no, unsigned prescaler, unsigned period, unsigned 
 	p->ARR=period-1;
 	p->PSC=prescaler-1;
 
-	p->CNT=0;
+	//p->CNT=0;
+	timer_reset(e_timer_no);
 	p->CR1 |= (1U<<0); //timer enable
 
 
@@ -62,5 +63,25 @@ void timer_start(TIMNO e_timer_no, int bstart_stop){
 	else if(bstart_stop==TIMER_STOP)
 		p->CR1 &= ~(1U<<0);
 }
+
+void timer_interrupt_config(TIMNO e_timer_no){
+	TIM_RegDef_t *pTimer= timTab[e_timer_no];
+	pTimer->DIER |= (1U<<0); // Çevresel kısımda kesme kaynağı aktif edildi.
+	nvic_irqno_enable(IRQ_TIM6_DAC);
+}
+
+
+
+void TIM6_DAC_IRQHandler(){
+	static int a =0;
+	++a;
+	//TIMER6->SR &= ~(1U<<0);
+	Clear_IT_PendingBit(); //makro
+
+}
+
+
+
+
 
 

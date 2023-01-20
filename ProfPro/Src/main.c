@@ -31,6 +31,7 @@
 
 
 
+
 #define BTN_PRESSED	1
 #define BTN_RELEASED 0
 
@@ -116,7 +117,8 @@ int main(void)
 	//lcd_print_string("baris");
 
 	gpio_writeto_output_pin(GPIOD, GPIO_PIN_NO_14, GPIO_PIN_SET);
-	timer_init(TIMER_6,15999,15999,0);
+	timer_init(TIMER_6,16000,16000,0);
+	timer_interrupt_config(TIMER_6);
     while(1)
     {
     	//delay();
@@ -134,4 +136,9 @@ int main(void)
     	timer_start(TIMER_6, TIMER_START);
 
     }
+
 }
+
+
+
+

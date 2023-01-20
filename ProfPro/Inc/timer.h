@@ -22,12 +22,17 @@ typedef enum TIMNO{
 	TIMER_8
 }TIMNO;
 
+
+#define Clear_IT_PendingBit() 	(TIMER6->SR &= ~(1U<<0));
+
 #define TIMER_STOP		0
 #define TIMER_START		1
 
 void timer_init(TIMNO e_timer_no, unsigned prescaler, unsigned period, unsigned repeat);
 void timer_start(TIMNO e_timer_no, int bstart_stop);
 void timer_reset(TIMNO e_timer_no);
-void timer_interrupt_config();
+void timer_interrupt_config(TIMNO e_timer_no);
+
+void TIM6_DAC_IRQHandler();
 
 #endif /* TIMER_H_ */
