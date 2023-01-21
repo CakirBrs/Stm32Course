@@ -99,10 +99,13 @@ int main(void)
 **/
 	//rng_init();
 
-	GPIO_Handle_t Gpio_pd_blue={GPIOD,{GPIO_PIN_NO_15,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+	//GPIO_Handle_t Gpio_pd_blue={GPIOD,{GPIO_PIN_NO_15,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD,GPIO_AF15}};
 	GPIO_Handle_t Gpio_pd_red={GPIOD,{GPIO_PIN_NO_14,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
 	GPIO_Handle_t Gpio_pd_orange={GPIOD,{GPIO_PIN_NO_13,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
 	GPIO_Handle_t Gpio_pd_green={GPIOD,{GPIO_PIN_NO_12,GPIO_MODE_OUT,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD}};
+
+	GPIO_Handle_t Gpio_pd_blue={GPIOD,{GPIO_PIN_NO_15,GPIO_MODE_ALTERNATE,GPIO_SPEED_MEDIUM,GPIO_OTYPE_PP,GPIO_NO_PUPD,GPIO_AF15}};
+
 
 	gpio_init(&Gpio_pd_blue);
 	gpio_init(&Gpio_pd_green);
@@ -116,25 +119,25 @@ int main(void)
 	//lcd_print_char('a');
 	//lcd_print_string("baris");
 
-	gpio_writeto_output_pin(GPIOD, GPIO_PIN_NO_14, GPIO_PIN_SET);
+	////gpio_writeto_output_pin(GPIOD, GPIO_PIN_NO_14, GPIO_PIN_SET);
 	//timer_init(TIMER_6,16000,16000,0);
-	timer_init(TIMER_6,SYSTEM_FREQ/2000,2000,0);
-	timer_interrupt_config(TIMER_6);
+	////timer_init(TIMER_6,SYSTEM_FREQ/2000,2000,0);
+	////timer_interrupt_config(TIMER_6);
     while(1)
     {
     	//delay();
     	//toggle_board_random_leds();
-    	task_led();
+    	////task_led();
     	int a=0;
     	int b=0;
     	int n=0;
     	int m=0;
     	//timer_reset(TIMER_6);
-    	timer_start(TIMER_6, TIMER_STOP);
+    	/////timer_start(TIMER_6, TIMER_STOP);
     	m++;
     	b++;
     	n++;
-    	timer_start(TIMER_6, TIMER_START);
+    	/////timer_start(TIMER_6, TIMER_START);
 
     }
 

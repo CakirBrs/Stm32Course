@@ -111,8 +111,14 @@ void gpio_init(GPIO_Handle_t * pGpio_handle){
 	pGpio_handle->pGpioX->OTYPER |=temp;
 
 	//alternate func mode --ilerde
-	if(pGpio_handle->gPIO_pinConfig.pin_mode==GPIO_MODE_ALTERNATE)
-		;
+	if(pGpio_handle->gPIO_pinConfig.pin_mode==GPIO_MODE_ALTERNATE){
+
+		uint8_t afr_low_high = pGpio_handle->gPIO_pinConfig.pin_number / 8;
+		uint8_t afr_pin_no = pGpio_handle->gPIO_pinConfig.pin_number % 8;
+
+		pGpio_handle->pGpioX->AFR[afr_low_high] &= ~(0X0F<<(4*afr_pin_no));
+		pGpio_handle->pGpioX->AFR[afr_low_high] |= (pGpio_handle->gPIO_pinConfig.pin_alternate_function_mode<<(4*afr_pin_no));
+	}
 
 	//bi portun pinine 1 mi 0 mı yazacağız....
 
